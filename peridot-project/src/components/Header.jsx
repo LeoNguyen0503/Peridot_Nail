@@ -1,5 +1,5 @@
 import logo from '../assets/logo.png'
-
+import { Link } from "react-router-dom";
 
 function Header(){
 
@@ -10,12 +10,12 @@ function Header(){
                 <nav className='navbar'>
                     <ul>
                         <img src={logo} alt="Peridot Logo" className='img-logo'/>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">Online Booking</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/about">About Us</Link></li>
+                        <li><Link to="/services">Services</Link></li>
+                        <li><Link to="/gallery">Gallery</Link></li>
+                        <li><Link to="/booking">Online Booking</Link></li>
+                        <li><Link to="/contact">Contact Us</Link></li>
                     </ul>
                 </nav>
             </header>
