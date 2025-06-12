@@ -9,13 +9,13 @@ function Header(){
             <header>
                 <nav className='navbar'>
                     <ul>
-                        <img src={logo} alt="Peridot Logo" className='img-logo'/>
+                        <Link to="/"><img src={logo} alt="Peridot Logo" className='img-logo'/></Link>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/about">About Us</Link></li>
                         <li><Link to="/services">Services</Link></li>
-                        <li><Link to="/gallery">Gallery</Link></li>
+                        {/*<li><Link to="/gallery">Gallery</Link></li>*/}
                         <li><Link to="/booking">Online Booking</Link></li>
-                        <li><Link to="/contact">Contact Us</Link></li>
+                        {/*<li><Link to="/contact">Contact Us</Link></li>*/}
                     </ul>
                 </nav>
             </header>
