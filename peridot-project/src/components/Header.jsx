@@ -1,26 +1,46 @@
 import logo from '../assets/logo.png'
 import { Link } from "react-router-dom";
+import {useEffect, useState} from "react";
+import { FiMenu, FiX } from "react-icons/fi";
 
-function Header(){
+function Header() {
+    const [isMobile, setIsMobile] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 750);
+        };
+
+        handleResize(); // initial check
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    },[]);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
 
     return (
-        <>
-            <header>
-                <nav className='navbar'>
-                    <ul>
-                        <Link to="/"><img src={logo} alt="Peridot Logo" className='img-logo'/></Link>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/about">About Us</Link></li>
-                        <li><Link to="/services">Services</Link></li>
-                        {/*<li><Link to="/gallery">Gallery</Link></li>*/}
-                        <li><Link to="/booking">Online Booking</Link></li>
-                        {/*<li><Link to="/contact">Contact Us</Link></li>*/}
-                    </ul>
-                </nav>
-            </header>
-        </>
-    )
+        <header>
+            <nav className='navbar'>
+                <Link to="/"><img src={logo} alt="Peridot Logo" className='img-logo' /></Link>
+
+                {isMobile && (
+                    <button className='menu-toggle' onClick={toggleMenu}>
+                        {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
+                    </button>
+                )}
+
+                <ul className={`nav-menu ${isMobile ? 'mobile' : ''} ${isOpen ? 'active' : ''}`}>
+                    <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
+                    <li><Link to="/about" onClick={() => setIsOpen(false)}>About Us</Link></li>
+                    <li><Link to="/services" onClick={() => setIsOpen(false)}>Services</Link></li>
+                    <li><Link to="/booking" onClick={() => setIsOpen(false)}>Online Booking</Link></li>
+                </ul>
+            </nav>
+        </header>
+    );
 }
 
-export default Header
+export default Header;

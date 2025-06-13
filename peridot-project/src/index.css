@@ -8,14 +8,19 @@
     --backgroundColor: #f5ffe2;
 }
 
-body{
+body, html{
     margin: 0;
+    padding: 0;
     /* font-family: 'Arial', Arial, Helvetica, sans-serif; */
     background-color: var(--backgroundColor);
 }
 
 a{
     text-decoration: none;
+}
+
+a:visited{
+    color: var(--textcolor);
 }
 
 /* Navbar  */
@@ -25,6 +30,39 @@ header{
     top: 0;
     z-index: 1000;
 }
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-left: auto;
+    z-index: 1100;
+}
+
+.nav-menu.mobile {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100vh;
+    width: 250px;
+    background-color: var(--darkgreen);
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 80px;
+    padding-left: 20px;
+    transition: var(--transition);
+    z-index: 1001;
+}
+
+.nav-menu.mobile.active {
+    right: 0;
+}
+
+.nav-menu.mobile li {
+    margin: 20px 0;
+}
+
 
 .navbar {
     display: flex;
@@ -49,7 +87,6 @@ header{
     height: 100px;
     margin-right: 24px;
     width: auto;
-    margin: 0;
 }
 
 .navbar li {
@@ -144,6 +181,13 @@ footer hr{
 .quick-link li{
     padding: 8px;
 }
+
+.quick-link .social-media{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .quick-link a, .quick-link a:visited{
     text-decoration: none;
     color: var(--textcolorDim);
@@ -160,17 +204,18 @@ footer hr{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 100%;
+    width: 100vw;
     height: 700px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     display: flex;
+    gap: 20px;
 }
 
 .image-container button{
     padding: 15px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     border-radius: 10px;
     margin: 10px;
     background-color: var(--lighergreen);
@@ -190,6 +235,8 @@ footer hr{
     background-color: hsla(0, 0%, 100%, 0.5);
     border-radius: 10px;
     text-align: center;
+    /*padding-right: 10px;*/
+    /*padding-left: 10px;*/
 }
 
 .image-container .tel-container p.tel{
@@ -197,13 +244,16 @@ footer hr{
     font-size: 2.2rem;
     font-weight: bold;
     font-family: roboto, sans-serif;
+    padding: 0px;
+    margin: 15px;
 }
 
 .image-container .tel-container p.address{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #0e210e;
     font-weight: bold;
     font-family: roboto, sans-serif;
+    margin: 15px;
 }
 
 /*Image carousel*/
@@ -360,6 +410,22 @@ footer hr{
 
 }
 
+
+/*About Us*/
+.about-container{
+    color: var(--darkgreen);
+}
+
+.about-container h2{
+    text-align: center;
+}
+
+.about-paragraph-container p{
+    font-size: 1.1rem;
+}
+
+/*Responsive design*/
+
 @media only screen and (max-width: 1300px){
     .service-card{
         max-width: 300px;
@@ -446,6 +512,18 @@ footer hr{
     }
     .service-card img:hover{
         width: 370px;
+    }
+
+    .image-container button{
+        font-size: 1.2rem;
+    }
+
+    .image-container .tel-container p.tel{
+        font-size: 1.8rem;
+    }
+
+    .image-container .tel-container p.address{
+        font-size: 1.2rem;
     }
 }
 

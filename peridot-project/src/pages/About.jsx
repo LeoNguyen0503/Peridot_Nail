@@ -8,7 +8,7 @@ function About(){
 
     return (
         <div className="about-container">
-            <h1>This is about us page</h1>
+            <h2>About Us</h2>
             <div className="about-paragraph-container">
                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto atque debitis ea enim est impedit itaque mollitia nesciunt nostrum obcaecati officia perspiciatis possimus praesentium quidem, similique suscipit temporibus tenetur.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, architecto asperiores autem blanditiis consequatur corporis doloremque eius esse ipsa iure iusto laudantium minus nulla pariatur ratione reprehenderit sequi sint voluptas?</p>

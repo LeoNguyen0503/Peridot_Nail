@@ -1,3 +1,5 @@
+import { FaFacebook,FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 function Footer(){
@@ -10,8 +12,12 @@ function Footer(){
                     <div className="quick-link">
                         <h3>QUICK LINKS</h3>
                         <ul>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Online Booking</a></li>
+                            <li><Link to="/services">Services</Link></li>
+                            <li><Link to = "/booking">Online Booking</Link></li>
+                        </ul>
+                        <ul className="social-media">
+                            <li><Link><FaFacebook/></Link></li>
+                            <li><Link><FaInstagram/></Link></li>
                         </ul>
                     </div>
                     <div className="contact">
@@ -27,7 +33,9 @@ function Footer(){
                     </div> 
                 </div>
                 <hr />
-                <p>&copy; {new Date().getFullYear()} Peridot Nails. All right reserved. Designed by Leo Nguyen</p>
+                <p>&copy; {new Date().getFullYear()} Peridot Nails. All right reserved. Designed by
+                    <a href="https://www.linkedin.com/in/leonguyen050304" target="_blank" rel="noopener noreferrer"> Leo Nguyen</a>
+                </p>
             </footer>
         </>
     );
