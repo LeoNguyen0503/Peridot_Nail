@@ -15,7 +15,7 @@ function Home(){
 
 
     return (
-        <div className="home-container">
+        <section className="home-container">
             <div className="image-container">
                 <Link to="/booking">
                     <button>Booking Appointment</button>
@@ -24,7 +24,7 @@ function Home(){
                     <button>Services</button>
                 </Link>
                 <div className="tel-container">
-                    <p className="tel">Tel: (506) 588-8614</p>
+                    <p className="tel">Tel: (506) 588-5350</p>
                     <p className="address">20 Burbank Court, Moncton</p>
                 </div>
             </div>
@@ -44,7 +44,7 @@ function Home(){
                 </div>
             </div>
 
-        </div>
+        </section>
     )
 }
 

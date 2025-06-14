@@ -3,13 +3,18 @@ import { Link } from "react-router-dom";
 import {useEffect, useState} from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
+import { useContext } from 'react';
+import { ScrollContext } from '../App';
+
 function Header() {
     const [isMobile, setIsMobile] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
+    const { scrollToFooter } = useContext(ScrollContext);
+
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth < 750);
+            setIsMobile(window.innerWidth < 770);
         };
 
         handleResize(); // initial check
@@ -20,6 +25,11 @@ function Header() {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+
+    const contactUsToggle = () => {
+        setIsOpen(false);
+        scrollToFooter();
+    }
 
     return (
         <header>
@@ -36,6 +46,12 @@ function Header() {
                     <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
                     <li><Link to="/about" onClick={() => setIsOpen(false)}>About Us</Link></li>
                     <li><Link to="/services" onClick={() => setIsOpen(false)}>Services</Link></li>
+                    <li><Link to="#" onClick={
+                        (e) => {
+                            e.preventDefault();
+                            contactUsToggle();
+                        }
+                    }>Contact Us</Link></li>
                     <li><Link to="/booking" onClick={() => setIsOpen(false)}>Online Booking</Link></li>
                 </ul>
             </nav>

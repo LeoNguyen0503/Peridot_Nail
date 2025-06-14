@@ -1,13 +1,14 @@
 import { FaFacebook,FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import {forwardRef} from "react";
 
 
-function Footer(){
+const Footer = forwardRef((props, ref) => {
 
 
     return(
         <>
-            <footer>
+            <footer ref={ref}>
                 <div className="footer-columns">
                     <div className="quick-link">
                         <h3>QUICK LINKS</h3>
@@ -16,20 +17,19 @@ function Footer(){
                             <li><Link to = "/booking">Online Booking</Link></li>
                         </ul>
                         <ul className="social-media">
-                            <li><Link><FaFacebook/></Link></li>
-                            <li><Link><FaInstagram/></Link></li>
+                            <li><a href="https://www.facebook.com/people/Peridot-Nail/61577093921464/" target="_blank" rel="noopener noreferrer"><FaFacebook/></a></li>
+                            <li><a><FaInstagram/></a></li>
                         </ul>
                     </div>
                     <div className="contact">
                         <h3>CONTACT US</h3>
-                        <p>Tel: (506) 588-8614</p>
+                        <p>Tel: (506) 588-5350</p>
                         <p>Address: 20 Burbank Court, Moncton</p>
+                        <p>Email: Peridotnailspa@gmail.com</p>
                     </div>
                     <div className="business-hours">
                         <h3>BUSINESS HOURS</h3>
-                        <p>Mon - Fri: 10 a.m - 8 p.m</p>
-                        <p>Saturday: 10 a.m - 8 p.m</p>
-                        <p>Sunday: 10 a.m - 8 p.m</p>
+                        <p>Mon - Sat: 9 a.m - 6 p.m</p>
                     </div> 
                 </div>
                 <hr />
@@ -39,6 +39,6 @@ function Footer(){
             </footer>
         </>
     );
-}
+});
 
 export default Footer

@@ -218,8 +218,8 @@ footer hr{
     font-size: 1.5rem;
     border-radius: 10px;
     margin: 10px;
-    background-color: var(--lighergreen);
-    color: var(--textcolor);
+    background-color: var(--textcolor);
+    color: var(--darkgreen);
     font-weight: bold;
     transition: var(--transition);
     cursor: pointer;
@@ -416,13 +416,17 @@ footer hr{
     color: var(--darkgreen);
 }
 
-.about-container h2{
+.about-container h1{
     text-align: center;
 }
 
 .about-paragraph-container p{
     font-size: 1.1rem;
 }
+
+/*Service page*/
+
+
 
 /*Responsive design*/
 
@@ -524,6 +528,35 @@ footer hr{
 
     .image-container .tel-container p.address{
         font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 350px){
+    .service-card{
+        max-width: 320px
+    }
+
+    .service-card img{
+        width: 320px;
+    }
+
+    .service-card:hover{
+        max-width: 330px;
+    }
+    .service-card img:hover{
+        width: 330px;
+    }
+
+    .image-container .tel-container p.tel{
+        font-size: 1.6rem;
+    }
+
+    .image-container .tel-container p.address{
+        font-size: 1rem;
+    }
+
+    .image-holder li img {
+        width: 300px;
     }
 }
 
