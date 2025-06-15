@@ -69,6 +69,7 @@ header{
     align-items: center;
     justify-content: center;
     padding: 10px 20px;
+    /*width: 100%;*/
     background-color: var(--darkgreen);
 }
 
@@ -324,7 +325,7 @@ footer hr{
     color: var(--darkgreen);
     margin-bottom: 0;
     font-size: 2rem;
-    font-family: cursive;
+    font-family: arial, sans-serif;
     font-weight: lighter;
 }
 
@@ -426,7 +427,58 @@ footer hr{
 
 /*Service page*/
 
+.price-section {
+    padding: 1rem;
+    color: black;
+}
 
+.category-title {
+    font-weight: bold;
+    border: 1px solid goldenrod;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: nowrap;
+}
+
+.service-name {
+    white-space: nowrap;
+}
+
+.dots {
+    flex: 1;
+    border-bottom: 2px dotted black;
+    margin: 0 0.5rem;
+}
+
+.price {
+    white-space: nowrap;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .service-item {
+        font-size: 0.9rem;
+    }
+
+    .category-title {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.8rem;
+    }
+}
 
 /*Responsive design*/
 
