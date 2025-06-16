@@ -48,7 +48,7 @@ function Services(){
         {name: "Regular Combo", price: "$55 | Gel: $70"},
         {name: "Polish Change on Hand", price: "$15"},
         {name: "Polish Change on Toes", price: "$15"},
-        {name: "RShellac Change on Hand", price: "$25"},
+        {name: "Shellac Change on Hand", price: "$25"},
         {name: "Shellac Change on Toes", price: "$25"},
     ]
 

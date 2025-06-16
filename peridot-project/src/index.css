@@ -13,6 +13,7 @@ body, html{
     padding: 0;
     /* font-family: 'Arial', Arial, Helvetica, sans-serif; */
     background-color: var(--backgroundColor);
+    /* font-family: 'arial', sans-serif; */
 }
 
 a{
@@ -405,11 +406,7 @@ footer hr{
     width: 420px;
 }
 
-.about-paragraph-container{
-    width: 90%;
-    margin: auto;
 
-}
 
 
 /*About Us*/
@@ -425,7 +422,31 @@ footer hr{
     font-size: 1.1rem;
 }
 
+.about-paragraph-container{
+    width: 70%;
+    margin: auto;
+
+}
+
 /*Service page*/
+
+.services-container .service-list{
+    color: var(--darkgreen);
+}
+
+.services-container h1{
+    text-align: center;
+    color: var(--darkgreen);
+}
+
+.services-container .category-price{
+    text-align: center;
+    color: var(--darkgreen);
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
 
 .price-section {
     padding: 1rem;
@@ -449,36 +470,31 @@ footer hr{
 .service-item {
     display: flex;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.15rem;
     margin-bottom: 0.75rem;
     flex-wrap: nowrap;
 }
 
 .service-name {
     white-space: nowrap;
+    margin-left: 6rem;
+
 }
 
 .dots {
     flex: 1;
-    border-bottom: 2px dotted black;
+    border-bottom: 2px dotted var(--darkgreen);
     margin: 0 0.5rem;
+    position: relative;
+    top: 0.3rem;
 }
 
-.price {
+.service-price {
     white-space: nowrap;
+    margin-right: 6rem;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .service-item {
-        font-size: 0.9rem;
-    }
 
-    .category-title {
-        font-size: 0.9rem;
-        padding: 0.3rem 0.8rem;
-    }
-}
 
 /*Responsive design*/
 
@@ -581,6 +597,25 @@ footer hr{
     .image-container .tel-container p.address{
         font-size: 1.2rem;
     }
+
+    .service-name{
+        margin-left: 0;  
+    }
+
+    .service-price{
+        margin-right: 0;
+    }
+
+    .dots{
+        border-bottom: 1.5px dotted var(--darkgreen);
+
+    }
+
+    .service-item{
+        font-size: 0.96rem;
+    }
+
+    
 }
 
 @media only screen and (max-width: 350px){
@@ -609,6 +644,10 @@ footer hr{
 
     .image-holder li img {
         width: 300px;
+    }
+
+    .price-section{
+        padding: 1px;
     }
 }
 
