@@ -450,7 +450,8 @@ footer hr{
 
 .price-section {
     padding: 1rem;
-    color: black;
+    border-top: 2px solid var(--lighergreen);
+    border-bottom: 2px solid var(--lighergreen);
 }
 
 .category-title {

@@ -28,7 +28,7 @@ function Home(){
                     <p className="address">20 Burbank Court, Moncton</p>
                 </div>
             </div>
-            <h2 className="home-title">Features</h2>
+            <h2 className="home-title">Collections</h2>
             <ImageCarousel images={[p1, p2, p3]} />
             <h2 className="home-title">Our Services</h2>
             <div className="card-container">
