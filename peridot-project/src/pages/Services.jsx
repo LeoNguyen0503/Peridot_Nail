@@ -8,28 +8,30 @@ function Services(){
     },[])
 
     const manicure = [
-        { name: "Regular Manicure", price: "$35" },
-        { name: "Shellac (gel) Manicure", price: "$40" },
-        { name: "Polish Colour Change", price: "$25" },
-        { name: "Shellac Colour Change", price: "$30" }
+        { name: "Regular Manicure", price: "$30" },
+        { name: "Shellac (gel) Manicure", price: "$35" },
+        { name: "Polish Colour Change", price: "$20" },
+        { name: "Shellac Colour Change", price: "$25" }
     ];
 
     const pedicure = [
         {name: "Regular Pedicure", price: "$50"},
         {name: "Shellac Pedicure", price: "$55"},
-        {name: "Polish Colour Change", price: "$30"},
-        {name: "Shellac Colour Change", price: "$35"}
+        {name: "Polish Colour Change", price: "$25"},
+        {name: "Shellac Colour Change", price: "$30"}
     ]
 
     const combo = [
-        {name: "Manicure & Pedicure Regular", price: "$80"},
-        {name: "Manicure & Pedicure Shellac", price: "$90"},
-        {name: "Shellac Manicure & Pedicure Regular", price: "$85"}
+        {name: "Manicure & Pedicure Regular", price: "$75"},
+        {name: "Manicure & Pedicure Shellac", price: "$85"},
+        {name: "Shellac Manicure & Pedicure Regular", price: "$80"}
     ]
 
     const nailsEnhancement = [
-        {name: "Full Set Bio Gel", price: "$75"},
-        {name: "Refill Bio Gel", price: "$65"}
+        {name: "Full Set Bio Gel", price: "$65"},
+        {name: "Refill Bio Gel", price: "$55"},
+        {name: "Full Set Acrylic", price: "$55"},
+        {name: "Refill Acrylic", price: "$45"},
     ]
 
     const addOn = [
@@ -43,13 +45,12 @@ function Services(){
     ]
 
     const kid = [
-        {name: "Regular Manicure", price: "$25 | Gel: $35"},
-        {name: "Regular Pedicure", price: "$35 | Gel: $45"},
+        {name: "Regular Manicure", price: "$20 | Gel: $30"},
+        {name: "Regular Pedicure", price: "$30 | Gel: $40"},
         {name: "Regular Combo", price: "$55 | Gel: $70"},
-        {name: "Polish Change on Hand", price: "$15"},
         {name: "Polish Change on Toes", price: "$15"},
-        {name: "Shellac Change on Hand", price: "$25"},
-        {name: "Shellac Change on Toes", price: "$25"},
+        {name: "Shellac Change on Hand", price: "$20"},
+        {name: "Shellac Change on Toes", price: "$20"},
     ]
 
     return (
