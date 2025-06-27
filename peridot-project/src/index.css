@@ -265,7 +265,7 @@ footer hr{
     position: relative;
     width: 100%;
     margin: auto;
-    height: 250px;
+    height: 260px;
     overflow: hidden;
 }
 
@@ -290,7 +290,7 @@ footer hr{
 
 .image-holder li img {
     width: 400px;
-    height: auto;
+    height: 250px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -325,7 +325,7 @@ footer hr{
 .home-container .home-title{
     text-align: center;
     color: var(--darkgreen);
-    margin-bottom: 0;
+    margin-bottom: 10px;
     font-size: 2rem;
     font-family: arial, sans-serif;
     font-weight: lighter;
@@ -353,7 +353,7 @@ footer hr{
 }
 .service-card img{
     width: 400px;
-    height: auto;
+    height: 250px;
     border-radius: 3%;
     transition: var(--transition);
 }
