@@ -18,7 +18,7 @@ const Footer = forwardRef((props, ref) => {
                         </ul>
                         <ul className="social-media">
                             <li><a href="https://www.facebook.com/people/Peridot-Nail/61577093921464/" target="_blank" rel="noopener noreferrer"><FaFacebook/></a></li>
-                            <li><a><FaInstagram/></a></li>
+                            <li><a href="https://www.instagram.com/peridotnailspa" target="_blank" rel="noopener noreferrer"><FaInstagram/></a></li>
                         </ul>
                     </div>
                     <div className="contact">
