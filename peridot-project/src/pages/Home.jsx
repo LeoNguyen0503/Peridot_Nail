@@ -3,7 +3,7 @@ import p2 from'../assets/nails/614d77bc-f739-47e4-a905-092ec074af89.jpg'
 import p3 from'../assets/nails/37245208-ae1d-42e4-bad6-6810e0324d01.jpg'
 
 import p4 from'../assets/nails/226af816-01d9-444a-ba11-a51c2b120aad.jpg'
-import p5 from'../assets/nails/ac9ca8db-611b-4af2-9d74-bfc70bccd656.jpg'
+import p5 from'../assets/nails/6a7196f5-f0b8-4765-b657-a079e84d6459.jpg'
 import p6 from'../assets/nails/37245208-ae1d-42e4-bad6-6810e0324d01.jpg'
 
 
@@ -39,9 +39,9 @@ function Home(){
             <h2 className="home-title">Our Services</h2>
             <div className="card-container">
                 <div className="card">
-                    <Link to="/services"><ServiceCard image={p1} name="Pedicure"/></Link>
-                    <Link to="/services"><ServiceCard image={p4} name="Manicure"/></Link>
-                    <Link to="/services"><ServiceCard image={p5} name="Kids 11 and Under"/></Link>
+                    <Link to="/services#Pedicure"><ServiceCard image={p1} name="Pedicure"/></Link>
+                    <Link to="/services#Manicure"><ServiceCard image={p4} name="Manicure"/></Link>
+                    <Link to="/services#Kids11andUnder"><ServiceCard image={p5} name="Kids 11 and Under"/></Link>
                 </div>
                 <div className="button-container">
                     <Link to="/services">

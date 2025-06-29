@@ -453,14 +453,7 @@ footer hr{
     padding: 1rem;
     border-top: 2px solid var(--lighergreen);
     border-bottom: 2px solid var(--lighergreen);
-}
-
-.category-title {
-    font-weight: bold;
-    border: 1px solid goldenrod;
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    margin-bottom: 1rem;
+    scroll-margin-top: 150px;
 }
 
 .service-list {

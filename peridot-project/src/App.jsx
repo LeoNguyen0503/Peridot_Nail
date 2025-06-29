@@ -23,7 +23,7 @@ function App() {
     <>
         <ScrollContext.Provider value={{ scrollToFooter }}>
             <Header />
-            <Outlet />
+            <Outlet />          
             <Footer ref={footerRef} />
         </ScrollContext.Provider>
     </>
