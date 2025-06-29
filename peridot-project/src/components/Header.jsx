@@ -52,7 +52,7 @@ function Header() {
                             contactUsToggle();
                         }
                     }>Contact Us</Link></li>
-                    {/* <li><Link to="/booking" onClick={() => setIsOpen(false)}>Online Booking</Link></li> */}
+                    <li><Link to="/booking" onClick={() => setIsOpen(false)}>Online Booking</Link></li>
                 </ul>
             </nav>
         </header>
