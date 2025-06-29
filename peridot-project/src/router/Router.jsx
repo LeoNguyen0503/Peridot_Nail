@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {createBrowserRouter} from "react-router-dom";
 import App from "../App"; 
 import Home from "../pages/Home";
 import About from "../pages/About";
@@ -6,20 +6,18 @@ import Services from "../pages/Services";
 import Gallery from "../pages/Gallery";
 import Booking from "../pages/Booking";
 
-function Router() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="services" element={<Services />} />
-          <Route path="gallery" element={<Gallery />} />
-          <Route path="booking" element={<Booking />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
-}
+const Router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {index:true, element: <Home/>},
+      {path: "about", element: <About/>},
+      {path: "services", element: <Services/>},
+      {path: "gallery", element: <Gallery/>},
+      {path: "booking", element: <Booking/>},
+    ],
+  },
+])
 
 export default Router;

@@ -18,7 +18,7 @@ const Footer = forwardRef((props, ref) => {
                         </ul>
                         <ul className="social-media">
                             <li><a href="https://www.facebook.com/people/Peridot-Nail/61577093921464/" target="_blank" rel="noopener noreferrer"><FaFacebook/></a></li>
-                            <li><a><FaInstagram/></a></li>
+                            <li><a href="https://www.instagram.com/peridotnailspa" target="_blank" rel="noopener noreferrer"><FaInstagram/></a></li>
                         </ul>
                     </div>
                     <div className="contact">
@@ -30,12 +30,16 @@ const Footer = forwardRef((props, ref) => {
                     <div className="business-hours">
                         <h3>BUSINESS HOURS</h3>
                         <p>Mon - Sat: 9 a.m - 6 p.m</p>
+                        <p>Sunday: Closed</p>
                     </div> 
                 </div>
                 <hr />
-                <p>&copy; {new Date().getFullYear()} Peridot Nails. All right reserved. Designed by
+                <div>
+                    <p>&copy; {new Date().getFullYear()} Peridot Nails. All right reserved. Designed by
                     <a href="https://www.linkedin.com/in/leonguyen050304" target="_blank" rel="noopener noreferrer"> Leo Nguyen</a>
-                </p>
+                    </p>
+                </div>
+                
             </footer>
         </>
     );

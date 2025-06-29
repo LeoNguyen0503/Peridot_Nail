@@ -1,13 +1,31 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import PriceList from '../components/PriceList.jsx'
 
 function Services(){
 
+    const location = useLocation();
+
     useEffect(() => {
             document.title = "Peridot Nails - Services";  
-    },[])
+    },[]);
 
-     const manicure = [
+    useEffect(() => {
+        const hash = window.location.hash;
+
+        if (hash){
+            const id = hash.replace("#","");
+            const element = document.getElementById(id);
+            if (element){
+                element.scrollIntoView({behavior: "smooth"})
+            }
+        }
+    },[location.hash])
+
+
+
+
+    const manicure = [
         { name: "Regular Manicure", price: "$30" },
         { name: "Shellac (gel) Manicure", price: "$35" },
         { name: "Polish Colour Change", price: "$20" },
@@ -30,8 +48,6 @@ function Services(){
     const nailsEnhancement = [
         {name: "Full Set Bio Gel", price: "$65"},
         {name: "Refill Bio Gel", price: "$55"},
-        {name: "Full Set Acrylic", price: "$55"},
-        {name: "Refill Acrylic", price: "$45"},
     ]
 
     const addOn = [

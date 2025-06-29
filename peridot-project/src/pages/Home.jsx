@@ -1,6 +1,12 @@
-import p1 from'../assets/placeholder/p1.jpg'
-import p2 from'../assets/placeholder/p2.jpg'
-import p3 from'../assets/placeholder/p3.jpg'
+import p1 from'../assets/nails/1e4563fa-7156-4f44-bde3-d60bce4436cd.jpg'
+import p2 from'../assets/nails/614d77bc-f739-47e4-a905-092ec074af89.jpg'
+import p3 from'../assets/nails/37245208-ae1d-42e4-bad6-6810e0324d01.jpg'
+
+import p4 from'../assets/nails/226af816-01d9-444a-ba11-a51c2b120aad.jpg'
+import p5 from'../assets/nails/6a7196f5-f0b8-4765-b657-a079e84d6459.jpg'
+import p6 from'../assets/nails/1f440f63-5626-42f1-898f-43ddfa879d61.jpg'
+
+
 import {useEffect} from 'react'
 import ImageCarousel from '../components/ImageCarousel.jsx'
 import ServiceCard from '../components/ServiceCard.jsx'
@@ -24,7 +30,7 @@ function Home(){
                     <button>Services</button>
                 </Link>
                 <div className="tel-container">
-                    <p className="tel">Tel: (506) 588-5350</p>
+                    <p className="tel">Tel: (506) 378-9279</p>
                     <p className="address">20 Burbank Court, Moncton</p>
                 </div>
             </div>
@@ -33,9 +39,9 @@ function Home(){
             <h2 className="home-title">Our Services</h2>
             <div className="card-container">
                 <div className="card">
-                    <Link to="/services"><ServiceCard image={p1} name="Pedicure"/></Link>
-                    <Link to="/services"><ServiceCard image={p2} name="Manicure"/></Link>
-                    <Link to="/services"><ServiceCard image={p3} name="Kids 11 and Under"/></Link>
+                    <Link to="/services#Pedicure"><ServiceCard image={p6} name="Pedicure"/></Link>
+                    <Link to="/services#Manicure"><ServiceCard image={p4} name="Manicure"/></Link>
+                    <Link to="/services#Kids11andUnder"><ServiceCard image={p5} name="Kids 11 and Under"/></Link>
                 </div>
                 <div className="button-container">
                     <Link to="/services">
