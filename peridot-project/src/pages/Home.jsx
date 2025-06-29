@@ -30,7 +30,7 @@ function Home(){
                     <button>Services</button>
                 </Link>
                 <div className="tel-container">
-                    <p className="tel">Tel: (506) 588-5350</p>
+                    <p className="tel">Tel: (506) 378-9279</p>
                     <p className="address">20 Burbank Court, Moncton</p>
                 </div>
             </div>
