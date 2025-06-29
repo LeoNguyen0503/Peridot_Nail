@@ -8,19 +8,35 @@ function Services(){
 
     useEffect(() => {
             document.title = "Peridot Nails - Services";  
+
+            const scrollToHash = () => {
+                const hash = window.location.hash;
+                if (hash) {
+                const id = hash.replace("#", "");
+                const el = document.getElementById(id);
+                if (el) {
+                    // Use a small delay to allow elements to mount
+                    setTimeout(() => {
+                    el.scrollIntoView({ behavior: "smooth" });
+                    }, 100);
+                }
+                }
+            };
+
+            scrollToHash();
     },[]);
 
-    useEffect(() => {
-        const hash = window.location.hash;
+    // useEffect(() => {
+    //     const hash = window.location.hash;
 
-        if (hash){
-            const id = hash.replace("#","");
-            const element = document.getElementById(id);
-            if (element){
-                element.scrollIntoView({behavior: "smooth"})
-            }
-        }
-    },[location.hash])
+    //     if (hash){
+    //         const id = hash.replace("#","");
+    //         const element = document.getElementById(id);
+    //         if (element){
+    //             element.scrollIntoView({behavior: "smooth"})
+    //         }
+    //     }
+    // },[location.hash])
 
 
 
