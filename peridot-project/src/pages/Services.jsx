@@ -18,27 +18,13 @@ function Services(){
                     // Use a small delay to allow elements to mount
                     setTimeout(() => {
                     el.scrollIntoView({ behavior: "smooth" });
-                    }, 100);
+                    }, 50);
                 }
                 }
             };
 
             scrollToHash();
     },[]);
-
-    // useEffect(() => {
-    //     const hash = window.location.hash;
-
-    //     if (hash){
-    //         const id = hash.replace("#","");
-    //         const element = document.getElementById(id);
-    //         if (element){
-    //             element.scrollIntoView({behavior: "smooth"})
-    //         }
-    //     }
-    // },[location.hash])
-
-
 
     const manicure = [
         { name: "Regular Manicure", price: "$30" },
