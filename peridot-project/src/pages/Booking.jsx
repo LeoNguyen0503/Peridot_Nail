@@ -9,7 +9,11 @@ function Booking(){
     return (
         <div className="booking-container">
             {/* <img src="https://via.placeholder.com/300x200?text=Placeholder" alt="Placeholder" /> */}
-            <h1>Please call: (506) 378-9279 to book an appointment</h1>
+            <div className="content">
+                <p>Please call:</p>
+                <p>(506) 378-9279</p>
+                <p>to book an appointment</p>
+            </div>
         </div>
     )
 }
