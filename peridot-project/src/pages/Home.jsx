@@ -4,16 +4,23 @@ import p3 from'../assets/nails/37245208-ae1d-42e4-bad6-6810e0324d01.jpg'
 
 import p4 from'../assets/nails/226af816-01d9-444a-ba11-a51c2b120aad.jpg'
 import p5 from'../assets/nails/6a7196f5-f0b8-4765-b657-a079e84d6459.jpg'
-import p6 from'../assets/nails/1f440f63-5626-42f1-898f-43ddfa879d61.jpg'
+import p6 from'../assets/nails/514291822_1769481323698392_8823121160383715461_n.jpg'
+
+import promotion from '../assets/promotion/promotion-highResolution.jpeg'
 
 
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import ImageCarousel from '../components/ImageCarousel.jsx'
 import ServiceCard from '../components/ServiceCard.jsx'
 import {Link} from 'react-router-dom'
 
+import { FiX } from "react-icons/fi";
+
+
 
 function Home(){
+
+    const [showPromotion, setShowPromotion] = useState(true);
 
     useEffect(() => {
         document.title = "Peridot Nails - Home";
@@ -22,6 +29,28 @@ function Home(){
 
     return (
         <section className="home-container">
+            {showPromotion && (
+                <div className="promotion-overlay">
+                    <div className="promotion-modal">
+                        <button
+                            className="promotion-close"
+                            onClick={() => setShowPromotion(false)}
+                            aria-label="Close promotion"
+                        >
+                            <FiX size={32} />
+                        </button>
+                        {/* <img src={promotion} alt="promotion" /> */}
+                        <p>🎉 Peridot Nails Spa Grand Opening – Wednesday, July 9! 🎉</p>
+                        <p>We’re so excited to welcome you to our cozy home-based nail spa at 20 Burbank Court, Moncton, NB 💅 </p>
+                        <p>✨To celebrate our grand opening, we’re offering special discounts for all services:</p>
+                        <p>🔸 30% OFF from July 9 - 15 (Combo services get 10% OFF)</p>
+                        <p>🔸 20% OFF from July 16 - 31 (Combo services get 5% OFF)</p>
+                        <p>📅 Walk-ins & appointments are welcome!</p>
+                        <p>📞 Book now at 506-378-9279 or send us a DM!</p>
+                        <p>Follow us and drop by for a relaxing, professional nail experience you’ll love 💚</p>
+                    </div>
+                </div>
+            )}
             <div className="image-container">
                 <Link to="/booking">
                     <button>Booking Appointment</button>
