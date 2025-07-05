@@ -573,6 +573,8 @@ footer hr{
     }
 }
 
+/* mobile screen  */
+
 @media only screen and (max-width: 530px){
     .card-container .card{
         display: block;
@@ -620,6 +622,10 @@ footer hr{
 
     .service-item{
         font-size: 0.96rem;
+    }
+
+    .booking-container .content{
+        margin: 0;
     }
 
     
