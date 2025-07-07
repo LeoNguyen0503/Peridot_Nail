@@ -20,7 +20,7 @@ lerna-debug.log*
 # === ENV FILES ===
 .env
 .env.*.local
-
+./backend/.env
 # === EDITOR & SYSTEM FILES ===
 .vscode/
 !.vscode/extensions.json

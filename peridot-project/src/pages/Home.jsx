@@ -3,7 +3,7 @@ import p2 from'../assets/nails/614d77bc-f739-47e4-a905-092ec074af89.jpg'
 import p3 from'../assets/nails/37245208-ae1d-42e4-bad6-6810e0324d01.jpg'
 
 import p4 from'../assets/nails/226af816-01d9-444a-ba11-a51c2b120aad.jpg'
-import p5 from'../assets/nails/6a7196f5-f0b8-4765-b657-a079e84d6459.jpg'
+import p5 from'../assets/nails/aadab154-6055-4cf1-a183-3d6bf011b30f.jpg'
 import p6 from'../assets/nails/514291822_1769481323698392_8823121160383715461_n.jpg'
 
 import promotion from '../assets/promotion/promotion-highResolution.jpeg'
@@ -20,11 +20,24 @@ import { FiX } from "react-icons/fi";
 
 function Home(){
 
-    const [showPromotion, setShowPromotion] = useState(true);
-
+    const [showPromotion, setShowPromotion] = useState(false);
+    
     useEffect(() => {
         document.title = "Peridot Nails - Home";
+
+        // Show promotion only if not closed in this session
+        const promotionClosed = sessionStorage.getItem('promotionClosed');
+        if (!promotionClosed) {
+            setShowPromotion(true);
+        }
+        
     },[])
+
+    const handleClosePromotion = () => {
+        setShowPromotion(false);
+        sessionStorage.setItem('promotionClosed', 'true'); // Store in session storage to remember closure
+
+    }
 
 
     return (
@@ -34,7 +47,7 @@ function Home(){
                     <div className="promotion-modal">
                         <button
                             className="promotion-close"
-                            onClick={() => setShowPromotion(false)}
+                            onClick={handleClosePromotion}
                             aria-label="Close promotion"
                         >
                             <FiX size={32} />

@@ -515,10 +515,16 @@ footer hr{
     justify-content: center;
 }
 
+.promotion-modal p{
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
 .promotion-modal {
-    background-color: var(--lighergreen);
+    background-color: #05442c;
     position: relative;
-    padding: 2rem;
+    /* padding: 2rem; */
     box-shadow: 0 4px 32px rgba(0,0,0,0.2);
     max-width: 90vw;
     max-height: 90vh;
@@ -527,7 +533,27 @@ footer hr{
     align-items: center;
     padding: 0;
     border: 2px solid white;
-    color: var(--backgroundColor)
+    color: var(--backgroundColor);
+    overflow: hidden;
+}
+
+.promotion-modal::before {
+    margin-top: 40px;
+    content: "";
+    position: absolute;
+    inset: 0; 
+    background-image: url('./assets/P.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    opacity: 0.35; 
+    z-index: 0; 
+    pointer-events: none; 
+}
+
+.promotion-modal > * {
+    position: relative;
+    z-index: 1;
 }
 
 .promotion-modal img {
@@ -670,6 +696,12 @@ footer hr{
 
     .booking-container .content{
         margin: 0;
+    }
+
+    .promotion-modal p{
+        padding: 0px;
+        margin: 9px;
+        font-size: 1rem;
     }
 
     
