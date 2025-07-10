@@ -46,6 +46,7 @@ function Header() {
                     <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
                     <li><Link to="/about" onClick={() => setIsOpen(false)}>About Us</Link></li>
                     <li><Link to="/services" onClick={() => setIsOpen(false)}>Services</Link></li>
+                    <li><Link to="/gallery" onClick={() => setIsOpen(false)}>Gallery</Link></li>
                     <li><Link to="#" onClick={
                         (e) => {
                             e.preventDefault();

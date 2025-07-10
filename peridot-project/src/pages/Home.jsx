@@ -78,6 +78,9 @@ function Home(){
             </div>
             <h2 className="home-title">Collections</h2>
             <ImageCarousel images={[p1, p2, p3]} />
+            <Link to="/gallery">
+                <button className="service-button">More Images</button>
+            </Link>
             <h2 className="home-title">Our Services</h2>
             <div className="card-container">
                 <div className="card">

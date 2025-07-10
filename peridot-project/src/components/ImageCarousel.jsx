@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function ImageCarousel({ images }){
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,7 +35,9 @@ function ImageCarousel({ images }){
                     const position = getPosition(index, currentIndex, images.length);
                     return (
                         <li key={index} className={position}>
-                            <img src={image} alt={`Image ${index + 1}`} />
+                            <Link to="/gallery">
+                                <img src={image} alt={`Image ${index + 1}`} />
+                            </Link>
                         </li>
                     );
                 })}

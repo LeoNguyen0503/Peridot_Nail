@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import ImageGallery from "../components/Images";
 
 function Gallery(){
 
@@ -8,8 +9,8 @@ function Gallery(){
 
     return (
         <div className="gallery-container">
-            {/* <img src="https://via.placeholder.com/300x200?text=Placeholder" alt="Placeholder" /> */}
-            <h1>This is gallery page</h1>
+            <h1>Gallery</h1>
+            <ImageGallery />
         </div>
     )
 }
