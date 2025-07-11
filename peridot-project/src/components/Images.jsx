@@ -12,6 +12,15 @@ import pic11 from "../assets/nails/514291822_1769481323698392_882312116038371546
 import pic12 from "../assets/nails/aadab154-6055-4cf1-a183-3d6bf011b30f.jpg";
 import pic13 from "../assets/nails/ac9ca8db-611b-4af2-9d74-bfc70bccd656.jpg";
 import pic14 from "../assets/nails/download.jpg";
+import pic15 from "../assets/nails/515286076_1072422524336133_7028703554641116684_n.jpg";
+import pic16 from "../assets/nails/515586806_1309303820620025_4456640108998490378_n.jpg";
+import pic17 from "../assets/nails/515651180_596614366539380_4155715137222637695_n.jpg";
+import pic18 from "../assets/nails/516033692_710950375163703_7290270173496409641_n.jpg";
+import pic19 from "../assets/nails/515673530_1697417977554417_7542061812837289286_n.jpg";
+import pic20 from "../assets/nails/516838695_1402114507743570_3829750828356869125_n.jpg";
+import pic21 from "../assets/nails/518301529_648995264863328_1352076501818162361_n.jpg";
+import pic22 from "../assets/nails/518780136_1488402672157353_2001335903713197377_n.jpg";
+
 import {useState} from "react";
 import { FiX } from "react-icons/fi";
 
@@ -22,7 +31,7 @@ function Images(){
     const [selectedImage, setSelectedImage] = useState(null);
 
     const images = [pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9,
-        pic10, pic11, pic12, pic13, pic14];
+        pic10, pic11, pic12, pic13, pic14, pic15, pic16, pic17, pic18, pic19, pic20, pic21, pic22];
 
 
     const handleClick = (image) => {
