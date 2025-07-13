@@ -1,5 +1,5 @@
-import pic1 from "../assets/nails/@pelikh_ nails ideas.jpg";
-import pic2 from "../assets/nails/1e4563fa-7156-4f44-bde3-d60bce4436cd.jpg";
+// import pic1 from "../assets/nails/@pelikh_ nails ideas.jpg";
+// import pic2 from "../assets/nails/1e4563fa-7156-4f44-bde3-d60bce4436cd.jpg";
 import pic3 from "../assets/nails/4d1b8f1f-02e3-4541-b054-4a355385e173.jpg";
 import pic4 from "../assets/nails/6a7196f5-f0b8-4765-b657-a079e84d6459.jpg";
 import pic5 from "../assets/nails/7ba2e0a3-7173-4ea4-8f13-7ca4b197ee2b.jpg";
@@ -30,8 +30,9 @@ function Images(){
     const [isFull, setIsFull] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
 
-    const images = [pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9,
-        pic10, pic11, pic12, pic13, pic14, pic15, pic16, pic17, pic18, pic19, pic20, pic21, pic22];
+    const images = [pic3, pic4, pic5, pic6, pic7, pic8, pic9,
+        pic10, pic11, pic12, pic13, pic14, pic15, pic16, pic17, pic18,
+        pic19, pic20, pic21, pic22];
 
 
     const handleClick = (image) => {
