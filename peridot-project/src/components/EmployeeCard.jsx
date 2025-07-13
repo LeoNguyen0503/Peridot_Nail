@@ -1,5 +1,8 @@
 
 
+const handleSubmit = () => {
+    console.log("submit");
+}
 
 
 function EmployeeCard(props){
@@ -11,7 +14,7 @@ function EmployeeCard(props){
                 <p className="name">{props.name}</p>
                 <p className="availability">Work: {props.availability}</p>
                 <p className="position">{props.position}</p>
-                <button>Book me</button>
+                <button onClick={handleSubmit}>Book me</button>
             </div>
         </div>
     );
