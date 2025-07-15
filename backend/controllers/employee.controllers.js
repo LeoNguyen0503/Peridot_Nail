@@ -14,8 +14,16 @@ export const getEmployees = async (_, res) => {
 export const createEmployee = async (req, res) => {
     const employee = req.body;
 
-    if (!employee.name || !employee.email || !employee.phone || !employee.position || !employee.availability) {
-        return res.status(400).json({ success: false, message: "Please provide all fields" });
+    if (
+        !employee.name ||
+        !employee.email ||
+        !employee.phone ||
+        !employee.position ||
+        !Array.isArray(employee.availability) ||
+        employee.availability.length === 0 ||
+        !employee.availability.every(item => item.day && Array.isArray(item.hours) && item.hours.length > 0)
+    ) {
+        return res.status(400).json({ success: false, message: "Please provide all fields correctly" });
     }
 
     const newEmployee = new Employee(employee);

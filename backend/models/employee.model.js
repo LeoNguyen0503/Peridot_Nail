@@ -17,10 +17,16 @@ const employeeSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    availability:{
-        type: [String],
-        required: true,  
-    },
+    availability:[{
+        day:{
+            type: String,
+            required: true,
+        },
+        hours:{
+            type: [String],
+            required: true,
+        }
+    }],
     image:{
         type: String,
         required: false,
