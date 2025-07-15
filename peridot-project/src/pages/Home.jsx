@@ -1,4 +1,4 @@
-import p1 from'../assets/nails/1e4563fa-7156-4f44-bde3-d60bce4436cd.jpg'
+import p1 from'../assets/nails/515586806_1309303820620025_4456640108998490378_n.jpg'
 import p2 from'../assets/nails/614d77bc-f739-47e4-a905-092ec074af89.jpg'
 import p3 from'../assets/nails/37245208-ae1d-42e4-bad6-6810e0324d01.jpg'
 

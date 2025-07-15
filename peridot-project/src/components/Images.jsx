@@ -20,6 +20,8 @@ import pic19 from "../assets/nails/515673530_1697417977554417_754206181283728928
 import pic20 from "../assets/nails/516838695_1402114507743570_3829750828356869125_n.jpg";
 import pic21 from "../assets/nails/518301529_648995264863328_1352076501818162361_n.jpg";
 import pic22 from "../assets/nails/518780136_1488402672157353_2001335903713197377_n.jpg";
+import pic23 from "../assets/nails/517165835_1208312434377958_4944608248562395113_n.jpg";
+import pic24 from "../assets/nails/517936693_1389568115675695_6857352705715375948_n.jpg";
 
 import {useState} from "react";
 import { FiX } from "react-icons/fi";
@@ -32,7 +34,7 @@ function Images(){
 
     const images = [pic3, pic4, pic5, pic6, pic7, pic8, pic9,
         pic10, pic11, pic12, pic13, pic14, pic15, pic16, pic17, pic18,
-        pic19, pic20, pic21, pic22];
+        pic19, pic20, pic21, pic22, pic23, pic24];
 
 
     const handleClick = (image) => {
