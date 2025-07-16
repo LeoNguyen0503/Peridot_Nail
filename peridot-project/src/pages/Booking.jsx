@@ -28,8 +28,8 @@ function Booking(){
 
     useEffect(() => {
        document.title = "Peridot Nails - Booking";
-       fetchEmployee();
-    },[])
+       fetchEmployee()
+    },[employees.length])
 
     const dateArray = (date) => {
         const res = [];

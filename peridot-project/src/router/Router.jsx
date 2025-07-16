@@ -5,6 +5,7 @@ import About from "../pages/About";
 import Services from "../pages/Services";
 import Gallery from "../pages/Gallery";
 import Booking from "../pages/Booking";
+import BookingProcess from "../pages/BookingProcess";
 
 const Router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const Router = createBrowserRouter([
       {path: "services", element: <Services/>},
       {path: "gallery", element: <Gallery/>},
       {path: "booking", element: <Booking/>},
+      {path: "booking-process", element: <BookingProcess/>}
     ],
   },
 ])

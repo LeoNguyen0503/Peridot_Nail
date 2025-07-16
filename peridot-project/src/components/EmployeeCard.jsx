@@ -1,11 +1,9 @@
 
-
+import {Link} from "react-router-dom";
 
 function EmployeeCard(props){
 
-    const handleSubmit = (name) => {
-        console.log("submit " + name);
-    }
+
 
 
     return (
@@ -15,7 +13,7 @@ function EmployeeCard(props){
                 <p className="name">{props.name}</p>
                 <p className="availability">Work: {props.availability}</p>
                 <p className="position">{props.position}</p>
-                <button onClick={() => handleSubmit(props.name)}>Book me</button>
+                <button><Link to="/booking-process" state={{name: props.name}}>Book me</Link></button>
             </div>
         </div>
     );
