@@ -13,7 +13,13 @@ function EmployeeCard(props){
                 <p className="name">{props.name}</p>
                 <p className="availability">Work: {props.availability}</p>
                 <p className="position">{props.position}</p>
-                <button><Link to="/booking-process" state={{name: props.name}}>Book me</Link></button>
+                <button>
+                    <Link to="/booking-process"
+                          state={{name: props.name,
+                              availability: props.availability}}>
+                        Book me
+                    </Link>
+                </button>
             </div>
         </div>
     );

@@ -13,6 +13,10 @@ const BookingSchema = new mongoose.Schema({
     time:{
         type: String,
         required: true,
+    },
+    services:{
+        type: [String],
+        required: true,
     }
 }, {
     timestamps: true,
