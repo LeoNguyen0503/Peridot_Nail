@@ -24,12 +24,10 @@ function Booking(){
     }
 
 
-
-
     useEffect(() => {
        document.title = "Peridot Nails - Booking";
        fetchEmployee()
-    },[employees.length])
+    },[])
 
     const dateArray = (date) => {
         const res = [];
@@ -67,6 +65,10 @@ function Booking(){
     const firstLetterUppercase = (str) => {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
+
+    // if (employees.length > 0){
+    //     console.log(employees[0].availability[0].hours);
+    // }
 
     return (
         <div className="booking-container">

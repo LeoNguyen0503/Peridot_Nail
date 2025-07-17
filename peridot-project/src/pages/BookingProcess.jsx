@@ -1,6 +1,9 @@
 import { useLocation } from "react-router-dom";
+import Flatpickr from "react-flatpickr";
+import "flatpickr/dist/themes/material_green.css";
 
 function BookingProcess(props) {
+
 
     const location = useLocation();
     const { name, availability } = location.state || {};
@@ -37,13 +40,31 @@ function BookingProcess(props) {
         return res;
     }
 
+    function disableWeekDays (daysToDisable) {
+        return function (date) {
+            return daysToDisable.includes(date.getDay());
+        }
+    }
+
+    const dateNumberArray = dateToNum(unavailable(availability));
+
     return (
         <div>
             <h1>Booking {name}</h1>
-            <p>availability: {availability}</p>
-            <p>Unavailable: {unavailable(availability).toString()}</p>
-            <p>Unavailable date to Number: {dateToNum(unavailable(availability)).toString()}</p>
-            {/*<input type="date"/>*/}
+            <form action="">
+                <Flatpickr
+                    placeholder="Select a date"
+                    options={{
+                        disable: [disableWeekDays(dateNumberArray)],
+                        dateFormat: "Y-m-d",
+                        minDate: "today",
+                    }}
+                />
+                <br/>
+
+                French Tip: <input type="checkbox" value="French Tip" />
+            </form>
+
         </div>
     )
 }
