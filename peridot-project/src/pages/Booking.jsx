@@ -29,55 +29,13 @@ function Booking(){
        fetchEmployee()
     },[])
 
-    const dateArray = (date) => {
-        const res = [];
-        for (let i = 0; i < date.length; i++){
-            res.push(date[i].day);
-        }
-
-        return res;
-    }
-
-
-    const shortDayOfWeek = (days) =>{
-        const dayMap = {
-            "Monday": "Mon",
-            "Tuesday": "Tue",
-            "Wednesday": "Wed",
-            "Thursday": "Thu",
-            "Friday": "Fri",
-            "Saturday": "Sat",
-            "Sunday": "Sun"
-        }
-
-        let dayString = "";
-
-        for (let i = 0; i < days.length; i++){
-            dayString += dayMap[days[i]];
-            if (i < days.length -1){
-                dayString += ", ";
-            }
-        }
-
-        return dayString;
-    }
-
-    const firstLetterUppercase = (str) => {
-        return str.charAt(0).toUpperCase() + str.slice(1);
-    }
-
-    // if (employees.length > 0){
-    //     console.log(employees[0].availability[0].hours);
-    // }
-
     return (
         <div className="booking-container">
             <ul>
                 {employees.map((employee, index) => (
                     <li key={index}>
-                        <EmployeeCard image={pic1} name={employee.name.toUpperCase()}
-                                      availability={shortDayOfWeek(dateArray(employee.availability))}
-                                      position={firstLetterUppercase(employee.position)}/>
+                        <EmployeeCard image={pic1}
+                                      employee={employee}/>
                     </li>
                 ))}
             </ul>

@@ -52,6 +52,44 @@ function BookingProcess(props) {
         <div>
             <h1>Booking {name}</h1>
             <form action="">
+
+                <br/>
+                <p>Service:</p>
+
+                <p>Manicure: </p>
+
+                Regular: <input type="checkbox" name="service" value="regular manicure" /><br/>
+                Shellac (gel): <input type="checkbox" name="service" value="shellac (gel) manicure" /><br/>
+                Polish Colour Change: <input type="checkbox" name="service" value="polish colour change" /><br/>
+                Shellac Colour Change: <input type="checkbox" name="service" value="shellac colour change" /><br/>
+                <p>Pedicure</p>
+                Regular Pedicure: <input type="checkbox" name="service" value="Regular Pedicure" /><br/>
+                Shellac Pedicure: <input type="checkbox" name="service" value="Shellac Pedicure" /><br/>
+                Polish Colour Change: <input type="checkbox" name="service" value="Polish Colour Change" /><br/>
+                Shellac Colour Change: <input type="checkbox" name="service" value="Shellac Colour Change" /><br/>
+                <p>Combo</p>
+                Manicure & Pedicure Regular: <input type="checkbox" name="service" value="Manicure & Pedicure Regular" /><br/>
+                Manicure & Pedicure Shellac: <input type="checkbox" name="service" value="Manicure & Pedicure Shellac" /><br/>
+                Shellac Manicure & Pedicure Regular: <input type="checkbox" name="service" value="Shellac Manicure & Pedicure Regular" /><br/>
+                <p>Nails Enhancement</p>
+                Full Set Bio Gel: <input type="checkbox" name="service" value="Full Set Bio Gel" /><br/>
+                Refill Bio Gel: <input type="checkbox" name="service" value="Refill Bio Gel" /><br/>
+                <p>Add On Services</p>
+                French Tip: <input type="checkbox" name="service" value="French Tip" /><br/>
+                Ombre: <input type="checkbox" name="service" value="Ombre" /><br/>
+                Chrome: <input type="checkbox" name="service" value="Chrome" /><br/>
+                Shellac Removal: <input type="checkbox" name="service" value="Shellac Removal" /><br/>
+                Acrylic Removal: <input type="checkbox" name="service" value="Acrylic Removal" /><br/>
+                Repair: <input type="checkbox" name="service" value="Repair" /><br/>
+                Design: <input type="checkbox" name="service" value="Design" /><br/>
+                <p>Kids 11 and Under</p>
+                Regular Manicure: <input type="checkbox" name="service" value="Regular Manicure" /><br/>
+                Regular Pedicure: <input type="checkbox" name="service" value="Regular Pedicure" /><br/>
+                Regular Combo: <input type="checkbox" name="service" value="Regular Combo" /><br/>
+                Polish Change on Toes: <input type="checkbox" name="service" value="Polish Change on Toes" /><br/>
+                Shellac Change on Hand: <input type="checkbox" name="service" value="Shellac Change on Hand" /><br/>
+                Shellac Change on Toes: <input type="checkbox" name="service" value="Shellac Change on Toes" /><br/>
+
                 <Flatpickr
                     placeholder="Select a date"
                     options={{
@@ -60,9 +98,8 @@ function BookingProcess(props) {
                         minDate: "today",
                     }}
                 />
-                <br/>
 
-                French Tip: <input type="checkbox" value="French Tip" />
+
             </form>
 
         </div>

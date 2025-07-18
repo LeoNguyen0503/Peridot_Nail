@@ -536,7 +536,7 @@ footer hr{
     font-size: 0.8rem;
 }
 
-.employee-card button{
+button{
     border: none;
     background-color: var(--lighergreen);
     color: var(--textcolor);
@@ -549,7 +549,7 @@ footer hr{
 
 
 
-.employee-card button:hover{
+button:hover{
     background-color: #1b6244;
 }
 
