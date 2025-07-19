@@ -1,9 +1,13 @@
 import { useLocation } from "react-router-dom";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/material_green.css";
+import {useState} from "react";
+import TimeSlot from "../components/TimeSlot.jsx";
 
 function BookingProcess(props) {
-
+    
+    const [selectedDate, setSelectedDate] = useState(null);
+    const [selectedTime, setSelectedTime] = useState(null);
 
     const location = useLocation();
     const { name, availability } = location.state || {};
@@ -47,6 +51,8 @@ function BookingProcess(props) {
     }
 
     const dateNumberArray = dateToNum(unavailable(availability));
+
+    
 
     return (
         <div>
@@ -97,7 +103,10 @@ function BookingProcess(props) {
                         dateFormat: "Y-m-d",
                         minDate: "today",
                     }}
+                    onChange = {(date) => setSelectedDate(date[0])}
                 />
+
+                <TimeSlot selectedDate = {selectedDate}/>
 
 
             </form>
