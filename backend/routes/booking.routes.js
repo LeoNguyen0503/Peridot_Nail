@@ -1,9 +1,20 @@
 import express from 'express';
-import { getBooking, createBooking, deleteBooking, updateBooking} from "../controllers/booking.controllers.js";
+import {
+    getBooking,
+    createBooking,
+    deleteBooking,
+    updateBooking,
+    getBookingByEmployeeId,
+    getBookingByEmployeeIdAndDate
+} from "../controllers/booking.controllers.js";
 
 const router = express.Router();
 
 router.get("", getBooking);
+
+router.get("/:id", getBookingByEmployeeId);
+
+router.get("/:id/date", getBookingByEmployeeIdAndDate)
 
 router.post("", createBooking);
 

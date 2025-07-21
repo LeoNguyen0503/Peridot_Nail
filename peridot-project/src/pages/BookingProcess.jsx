@@ -3,21 +3,22 @@ import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/material_green.css";
 import {useState} from "react";
 import TimeSlot from "../components/TimeSlot.jsx";
+import {createBooking} from "../api/booking.js"
 
 function BookingProcess(props) {
-    
+
     const [selectedDate, setSelectedDate] = useState(null);
     const [selectedTime, setSelectedTime] = useState(null);
 
     const location = useLocation();
-    const { name, availability } = location.state || {};
+    const { name, availability, availObject, employeeId } = location.state || {};
 
     const unavailable = (date) => {
         const dateInWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
         const unavailableDate = [];
         for (let i = 0; i < dateInWeek.length; i++){
-            if (date.indexOf(dateInWeek[i]) == -1){
+            if (date.indexOf(dateInWeek[i]) === -1){
                 unavailableDate.push(dateInWeek[i]);
             }
         }
@@ -52,12 +53,45 @@ function BookingProcess(props) {
 
     const dateNumberArray = dateToNum(unavailable(availability));
 
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const checkedServices = Array.from(document.querySelectorAll('input[name="service"]:checked')).map(input => input.value);
+
+        console.log("services: ", checkedServices);
+
+        if (!selectedTime || !selectedDate || checkedServices.length ===0){
+            alert("Please select date, time and at least one service");
+        }
+
+        const booking = {
+            employeeId: employeeId,
+            date: selectedDate,
+            dateString: selectedDate.toLocaleDateString(),
+            time: selectedTime,
+            services: checkedServices
+        }
+
+        try {
+            const data = await createBooking(booking);
+            if (data.success) {
+                alert ("Booked Successfully!");
+            }else {
+                alert("Booking Failed! " + data.message);
+            }
+        } catch (error) {
+            console.error(error);
+            alert("Error while creating booking!");
+        }
+
+    }
+
     
 
     return (
         <div>
             <h1>Booking {name}</h1>
-            <form action="">
+            <form onSubmit={handleSubmit}>
 
                 <br/>
                 <p>Service:</p>
@@ -106,11 +140,20 @@ function BookingProcess(props) {
                     onChange = {(date) => setSelectedDate(date[0])}
                 />
 
-                <TimeSlot selectedDate = {selectedDate}/>
+                <TimeSlot
+                    selectedDate = {selectedDate}
+                    setSelectedTime={setSelectedTime}
+                    availObject = {availObject}
+                    employeeId = {employeeId}
+                />
+
+                <input type="submit"/>
+                <input type="reset"/>
 
 
             </form>
 
+            <p>selected time: {selectedTime}</p>
         </div>
     )
 }

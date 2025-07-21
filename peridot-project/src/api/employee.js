@@ -6,3 +6,12 @@ export const getEmployees = async () => {
 
     return employee;
 }
+
+export const getEmployeeById = async (id) => {
+    const response = await fetch(`/api/employees/${id}`);
+
+    const employee = await response.json();
+
+    return employee;
+}
+

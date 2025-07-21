@@ -42,6 +42,8 @@ function EmployeeCard(props){
 
     const avail = shortDayOfWeek(dateArray(props.employee.availability));
     const position = firstLetterUppercase(props.employee.position);
+    const employeeId = props.employee._id;
+
 
 
     return (
@@ -55,7 +57,9 @@ function EmployeeCard(props){
                     <Link to="/booking-process"
                           state={{
                               name: props.employee.name.toUpperCase(),
-                              availability: avail
+                              availability: avail,
+                              availObject: props.employee.availability,
+                              employeeId: employeeId
                           }}>
                         Book me
                     </Link>
