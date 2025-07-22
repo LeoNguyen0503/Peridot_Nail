@@ -22,6 +22,20 @@ import pic21 from "../assets/nails/518301529_648995264863328_1352076501818162361
 import pic22 from "../assets/nails/518780136_1488402672157353_2001335903713197377_n.jpg";
 import pic23 from "../assets/nails/517165835_1208312434377958_4944608248562395113_n.jpg";
 import pic24 from "../assets/nails/517936693_1389568115675695_6857352705715375948_n.jpg";
+import pic25 from "../assets/nails/517582970_1952616692164872_4551077578678294188_n.jpg";
+import pic26 from "../assets/nails/517919618_1470575407452726_7860899055209606979_n.jpg";
+import pic27 from "../assets/nails/517960415_752742903870263_7221269678086592430_n.jpg";
+import pic28 from "../assets/nails/518238119_1268706201546868_5784495729424290577_n.jpg";
+import pic29 from "../assets/nails/518456519_1727508184537563_2371732598624825696_n.jpg";
+import pic30 from "../assets/nails/518769221_1802957397244877_548898231637375682_n.jpg";
+import pic31 from "../assets/nails/519389489_1279398846916637_950722391290912212_n.jpg";
+import pic32 from "../assets/nails/520239547_764137626122933_3498810652697986068_n.jpg";
+import pic33 from "../assets/nails/520240915_1437476170631874_5049353644418210743_n.jpg";
+import pic34 from "../assets/nails/520452786_1222339862970920_3322980548344095161_n.jpg";
+import pic35 from "../assets/nails/520629053_1945806369488656_4420872865494926631_n.jpg";
+import pic36 from "../assets/nails/520629053_3290318081118173_8665557733899724220_n.jpg";
+import pic37 from "../assets/nails/520979196_1274423897613686_370259972468907062_n.jpg";
+import pic38 from "../assets/nails/521399185_1032686342036667_3271426283377329691_n.jpg";
 
 import {useState} from "react";
 import { FiX } from "react-icons/fi";
@@ -34,7 +48,8 @@ function Images(){
 
     const images = [pic3, pic4, pic5, pic6, pic7, pic8, pic9,
         pic10, pic11, pic12, pic13, pic14, pic15, pic16, pic17, pic18,
-        pic19, pic20, pic21, pic22, pic23, pic24];
+        pic19, pic20, pic21, pic22, pic23, pic24, pic25, pic26, pic27,
+    pic28, pic29, pic30, pic31, pic32, pic33, pic34, pic35, pic36, pic37, pic38];
 
 
     const handleClick = (image) => {
