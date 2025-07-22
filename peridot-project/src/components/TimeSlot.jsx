@@ -8,6 +8,7 @@ function TimeSlot( { selectedDate, setSelectedTime, employeeId, availObject } ){
     const [availTime, setAvailTime] = useState([]);
 
     useEffect(() => {
+        let isCancelled = false;
         const fetchTimeSlot = async () => {
 
             if (!selectedDate || !employeeId || !availObject) {
@@ -15,21 +16,30 @@ function TimeSlot( { selectedDate, setSelectedTime, employeeId, availObject } ){
                 return;
             }
 
+            setTimeSlot(null);
+
             const dateString = selectedDate.toLocaleDateString();
             const slot = await getBookedTimeSlot(employeeId, dateString);
 
-            if (slot){
-                console.log("Time slot: ", slot);
-                setTimeSlot(slot);
-            } else {
-                console.log(`No time slot found...`);
+            if (!isCancelled) {
+                if (slot) {
+                    console.log("Time slot: ", slot);
+                    setTimeSlot(slot);
+                } else {
+                    console.log(`No time slot found...`);
+                }
             }
         }
 
         fetchTimeSlot();
+
+        return () => {
+            isCancelled = true;
+        }
     },[selectedDate])
 
     useEffect(() => {
+
         if (!selectedDate){
             return;
         }
@@ -66,18 +76,22 @@ function TimeSlot( { selectedDate, setSelectedTime, employeeId, availObject } ){
 
 
     return(
-        <div>
-            {availTime.length > 0 && (<ul>
-                {availTime.map((time, index) => (
-                    <li key={index}>
-                        <button
-                            type="button"
-                            onClick={() => setSelectedTime(time)}>
-                            {time}
-                        </button>
-                    </li>
-                ))}
-            </ul>)}
+        <div className="time-slot-container">
+            {availTime.length > 0 && (
+                <ul className="time-slot-list">
+                    {availTime.map((time, index) => (
+                        <li key={index}>
+                            <button
+                                type="button"
+                                className="time-slot-button"
+                                onClick={() => setSelectedTime(time)}
+                            >
+                                {time}
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            )}
         </div>
         
     )

@@ -554,6 +554,134 @@ footer hr{
 }
 
 
+/*Booking Process*/
+
+.booking-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 1.5rem;
+    font-family: Arial, sans-serif;
+    background-color: #fdfdfd;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+}
+
+.booking-form h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #444;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+}
+
+legend {
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 0 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.time-slot-container {
+    margin: 2rem auto;
+    max-width: 500px;
+    text-align: center;
+}
+
+.time-slot-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.time-slot-list li {
+    margin: 0;
+}
+
+.time-slot-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.time-slot-button:hover {
+    background-color: #3498db;
+    color: white;
+    transform: scale(1.05);
+}
+
+.time-slot-button:active {
+    background-color: #2980b9;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center; /* centers the buttons horizontally */
+    gap: 1rem; /* adds space between buttons */
+    margin-top: 1.5rem;
+}
+
+.submit-button,
+.reset-button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.submit-button {
+    background-color: #3498db;
+    color: white;
+}
+
+.reset-button {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.submit-button:hover {
+    background-color: #2980b9;
+}
+
+.reset-button:hover {
+    background-color: #c0392b;
+}
+
+.date-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* space between text and input */
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.date-label input {
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
 
 /*Responsive design*/
 
