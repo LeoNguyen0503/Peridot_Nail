@@ -67,10 +67,25 @@ function BookingProcess(props) {
             checkedServices[category] = Array.from(input).map(item => item.value);
         }
 
+        const phone = document.querySelector("input[name=phone]").value;
+
         console.log("services: ", checkedServices);
 
         if (!selectedTime || !selectedDate || checkedServices.length ===0){
             alert("Please select date, time and at least one service");
+            return;
+        }
+
+        if (phone.length === 0){
+            alert("Please enter your phone number");
+            return;
+        }
+
+        const regex = /^\d{3}-\d{3}-\d{4}$/
+
+        if (!regex.test(phone)){
+            alert("Please enter a valid phone number");
+            return;
         }
 
         const booking = {
@@ -78,7 +93,8 @@ function BookingProcess(props) {
             date: selectedDate,
             dateString: selectedDate.toLocaleDateString(),
             time: selectedTime,
-            services: checkedServices
+            services: checkedServices,
+            phone: phone
         }
 
         try {
@@ -175,6 +191,11 @@ function BookingProcess(props) {
                     availObject = {availObject}
                     employeeId = {employeeId}
                 />
+
+                <fieldset>
+                    <legend>Enter your phone number:</legend>
+                    <label><input type="text" name="phone" placeholder="Eg: 123-456-7890"/></label>
+                </fieldset>
 
                 <div className="form-buttons">
                     <input className="submit-button" type="submit"/>

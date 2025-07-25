@@ -25,6 +25,10 @@ const BookingSchema = new mongoose.Schema({
         nailsEnhancement: [String],
         addOn: [String],
         kids: [String]
+    },
+    phone: {
+        type: String,
+        required: true,
     }
 }, {
     timestamps: true,
