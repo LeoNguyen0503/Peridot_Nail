@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import {connectDB} from './config/db.js';
 import employeeRoutes from './routes/employee.routes.js';
 import bookingRoutes from './routes/booking.routes.js';
+import adminRoutes from './routes/admin.routes.js';
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ app.use(express.json()); //allow to accept JSON data in requests
 
 app.use("/api/employees", employeeRoutes);
 app.use("/api/bookings", bookingRoutes);
+app.use("/api/admin", adminRoutes);
 
 
 

@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/material_green.css";
 import {useState} from "react";
@@ -10,8 +10,10 @@ function BookingProcess(props) {
     const [selectedDate, setSelectedDate] = useState(null);
     const [selectedTime, setSelectedTime] = useState(null);
 
+    const navigate = useNavigate();
     const location = useLocation();
     const { name, availability, availObject, employeeId } = location.state || {};
+
 
     const unavailable = (date) => {
         const dateInWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -56,7 +58,14 @@ function BookingProcess(props) {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        const checkedServices = Array.from(document.querySelectorAll('input[name="service"]:checked')).map(input => input.value);
+        const categories = ["manicure", "pedicure", "combo", "nailsEnhancement", "addOn", "kids"];
+
+        const checkedServices = {}
+
+        for (const category of categories) {
+            const input = document.querySelectorAll(`input[name=${category}]:checked`);
+            checkedServices[category] = Array.from(input).map(item => item.value);
+        }
 
         console.log("services: ", checkedServices);
 
@@ -76,6 +85,7 @@ function BookingProcess(props) {
             const data = await createBooking(booking);
             if (data.success) {
                 alert ("Booked Successfully!");
+                navigate("/");
             }else {
                 alert("Booking Failed! " + data.message);
             }
@@ -86,7 +96,10 @@ function BookingProcess(props) {
 
     }
 
-    
+    const handleButtonClick = (time) => {
+        setSelectedTime(time);
+
+    }
 
     return (
         <div className="booking-form">
@@ -95,52 +108,52 @@ function BookingProcess(props) {
 
                 <fieldset>
                     <legend>Manicure</legend>
-                    <label><input type="checkbox" name="service" value="regular manicure" /> Regular</label>
-                    <label><input type="checkbox" name="service" value="shellac (gel) manicure" /> Shellac (gel)</label>
-                    <label><input type="checkbox" name="service" value="polish colour change" /> Polish Colour Change</label>
-                    <label><input type="checkbox" name="service" value="shellac colour change" /> Shellac Colour Change</label>
+                    <label><input type="checkbox" name="manicure" value="Regular Manicure" /> Regular</label>
+                    <label><input type="checkbox" name="manicure" value="Shellac (Gel) Manicure" /> Shellac (gel)</label>
+                    <label><input type="checkbox" name="manicure" value="Polish Colour Change" /> Polish Colour Change</label>
+                    <label><input type="checkbox" name="manicure" value="Shellac Colour Change" /> Shellac Colour Change</label>
                 </fieldset>
 
                 <fieldset>
                     <legend>Pedicure</legend>
-                    <label><input type="checkbox" name="service" value="Regular Pedicure" /> Regular Pedicure</label>
-                    <label><input type="checkbox" name="service" value="Shellac Pedicure" /> Shellac Pedicure</label>
-                    <label><input type="checkbox" name="service" value="Polish Colour Change" /> Polish Colour Change</label>
-                    <label><input type="checkbox" name="service" value="Shellac Colour Change" /> Shellac Colour Change</label>
+                    <label><input type="checkbox" name="pedicure" value="Regular Pedicure" /> Regular Pedicure</label>
+                    <label><input type="checkbox" name="pedicure" value="Shellac Pedicure" /> Shellac Pedicure</label>
+                    <label><input type="checkbox" name="pedicure" value="Polish Colour Change" /> Polish Colour Change</label>
+                    <label><input type="checkbox" name="pedicure" value="Shellac Colour Change" /> Shellac Colour Change</label>
                 </fieldset>
 
                 <fieldset>
                     <legend>Combo</legend>
-                    <label><input type="checkbox" name="service" value="Manicure & Pedicure Regular" /> Manicure & Pedicure Regular</label>
-                    <label><input type="checkbox" name="service" value="Manicure & Pedicure Shellac" /> Manicure & Pedicure Shellac</label>
-                    <label><input type="checkbox" name="service" value="Shellac Manicure & Pedicure Regular" /> Shellac Manicure & Pedicure Regular</label>
+                    <label><input type="checkbox" name="combo" value="Manicure & Pedicure Regular" /> Manicure & Pedicure Regular</label>
+                    <label><input type="checkbox" name="combo" value="Manicure & Pedicure Shellac" /> Manicure & Pedicure Shellac</label>
+                    <label><input type="checkbox" name="combo" value="Shellac Manicure & Pedicure Regular" /> Shellac Manicure & Pedicure Regular</label>
                 </fieldset>
 
                 <fieldset>
                     <legend>Nails Enhancement</legend>
-                    <label><input type="checkbox" name="service" value="Full Set Bio Gel" /> Full Set Bio Gel</label>
-                    <label><input type="checkbox" name="service" value="Refill Bio Gel" /> Refill Bio Gel</label>
+                    <label><input type="checkbox" name="nailsEnhancement" value="Full Set Bio Gel" /> Full Set Bio Gel</label>
+                    <label><input type="checkbox" name="nailsEnhancement" value="Refill Bio Gel" /> Refill Bio Gel</label>
                 </fieldset>
 
                 <fieldset>
                     <legend>Add On Services</legend>
-                    <label><input type="checkbox" name="service" value="French Tip" /> French Tip</label>
-                    <label><input type="checkbox" name="service" value="Ombre" /> Ombre</label>
-                    <label><input type="checkbox" name="service" value="Chrome" /> Chrome</label>
-                    <label><input type="checkbox" name="service" value="Shellac Removal" /> Shellac Removal</label>
-                    <label><input type="checkbox" name="service" value="Acrylic Removal" /> Acrylic Removal</label>
-                    <label><input type="checkbox" name="service" value="Repair" /> Repair</label>
-                    <label><input type="checkbox" name="service" value="Design" /> Design</label>
+                    <label><input type="checkbox" name="addOn" value="French Tip" /> French Tip</label>
+                    <label><input type="checkbox" name="addOn" value="Ombre" /> Ombre</label>
+                    <label><input type="checkbox" name="addOn" value="Chrome" /> Chrome</label>
+                    <label><input type="checkbox" name="addOn" value="Shellac Removal" /> Shellac Removal</label>
+                    <label><input type="checkbox" name="addOn" value="Acrylic Removal" /> Acrylic Removal</label>
+                    <label><input type="checkbox" name="addOn" value="Repair" /> Repair</label>
+                    <label><input type="checkbox" name="addOn" value="Design" /> Design</label>
                 </fieldset>
 
                 <fieldset>
                     <legend>Kids 11 and Under</legend>
-                    <label><input type="checkbox" name="service" value="Regular Manicure" /> Regular Manicure</label>
-                    <label><input type="checkbox" name="service" value="Regular Pedicure" /> Regular Pedicure</label>
-                    <label><input type="checkbox" name="service" value="Regular Combo" /> Regular Combo</label>
-                    <label><input type="checkbox" name="service" value="Polish Change on Toes" /> Polish Change on Toes</label>
-                    <label><input type="checkbox" name="service" value="Shellac Change on Hand" /> Shellac Change on Hand</label>
-                    <label><input type="checkbox" name="service" value="Shellac Change on Toes" /> Shellac Change on Toes</label>
+                    <label><input type="checkbox" name="kids" value="Regular Manicure" /> Regular Manicure</label>
+                    <label><input type="checkbox" name="kids" value="Regular Pedicure" /> Regular Pedicure</label>
+                    <label><input type="checkbox" name="kids" value="Regular Combo" /> Regular Combo</label>
+                    <label><input type="checkbox" name="kids" value="Polish Change on Toes" /> Polish Change on Toes</label>
+                    <label><input type="checkbox" name="kids" value="Shellac Change on Hand" /> Shellac Change on Hand</label>
+                    <label><input type="checkbox" name="kids" value="Shellac Change on Toes" /> Shellac Change on Toes</label>
                 </fieldset>
 
                 <label className="date-label"> Select Date:
@@ -157,6 +170,7 @@ function BookingProcess(props) {
 
                 <TimeSlot
                     selectedDate = {selectedDate}
+                    selectedTime = {selectedTime}
                     setSelectedTime={setSelectedTime}
                     availObject = {availObject}
                     employeeId = {employeeId}

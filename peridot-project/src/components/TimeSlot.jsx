@@ -2,7 +2,7 @@ import {useEffect, useReducer, useState} from "react";
 import {getBookedTimeSlot, numToDay} from "../api/index.js";
 
 
-function TimeSlot( { selectedDate, setSelectedTime, employeeId, availObject } ){
+function TimeSlot( { selectedDate, selectedTime, setSelectedTime, employeeId, availObject } ){
 
     const [timeSlot, setTimeSlot] = useState(null);
     const [availTime, setAvailTime] = useState([]);
@@ -83,7 +83,7 @@ function TimeSlot( { selectedDate, setSelectedTime, employeeId, availObject } ){
                         <li key={index}>
                             <button
                                 type="button"
-                                className="time-slot-button"
+                                className={`time-slot-button ${selectedTime === time ? "selected" : ""}`}
                                 onClick={() => setSelectedTime(time)}
                             >
                                 {time}

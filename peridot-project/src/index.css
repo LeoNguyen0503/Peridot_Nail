@@ -635,6 +635,10 @@ input[type="checkbox"] {
     background-color: #2980b9;
 }
 
+.time-slot-button.selected {
+    background-color: #3498db;
+}
+
 .form-buttons {
     display: flex;
     justify-content: center; /* centers the buttons horizontally */

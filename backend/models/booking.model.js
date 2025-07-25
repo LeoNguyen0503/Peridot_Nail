@@ -18,9 +18,13 @@ const BookingSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    services:{
-        type: [String],
-        required: true,
+    services: {
+        manicure: [String],
+        pedicure: [String],
+        combo: [String],
+        nailsEnhancement: [String],
+        addOn: [String],
+        kids: [String]
     }
 }, {
     timestamps: true,
