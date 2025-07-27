@@ -6,6 +6,10 @@ const BookingSchema = new mongoose.Schema({
         ref: "Employee",
         required: true,
     },
+    employeeName:{
+        type: String,
+        required: true,
+    },
     date:{
         type: Date,
         required: true,

@@ -2,8 +2,11 @@ import Booking from '../models/booking.model.js';
 import mongoose from 'mongoose';
 
 export const getBooking = async (_, res) => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // normalize to start of today
+
     try {
-        const booking = await Booking.find({});
+        const booking = await Booking.find({date: { $gte: today }}).sort({createdAt: -1});
         res.status(200).json({ success: true, data: booking });
     } catch (e) {
         console.error("Error in Get booking", e.message);
@@ -38,8 +41,32 @@ export const getBookingByEmployeeIdAndDate = async (req, res) => {
             dateString: date
         });
 
-        if (!booking){
+        if (booking.length === 0){
             return res.status(404).json({ success: false, message: "Booking not found" });
+        }
+
+        res.status(200).json({ success: true, data: booking });
+    } catch (error) {
+        console.error("Error in Get booking by Employee ID and DateString", error.message);
+        res.status(500).json({ success: false, message: "Internal Server Error" });
+    }
+}
+
+export const getBookingByEmployeeName = async (req, res) => {
+    const {name} = req.params;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    console.log(name);
+
+    try {
+        const booking = await Booking.find({
+            employeeName: name,
+            date: { $gte: today }
+        }).sort({dateString: -1, time: 1});
+
+        if (booking.length === 0){
+            return res.status(404).json({ success: false, message: "Booking not found"});
         }
 
         res.status(200).json({ success: true, data: booking });

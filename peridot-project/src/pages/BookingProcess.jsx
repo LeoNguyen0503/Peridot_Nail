@@ -90,6 +90,7 @@ function BookingProcess(props) {
 
         const booking = {
             employeeId: employeeId,
+            employeeName: name.charAt(0).toUpperCase() + name.slice(1).toLowerCase(),
             date: selectedDate,
             dateString: selectedDate.toLocaleDateString(),
             time: selectedTime,

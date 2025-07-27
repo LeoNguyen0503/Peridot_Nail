@@ -23,6 +23,14 @@ export const getBookingByEmployeeIdAndDate = async (eId, dateString) => {
     return booking;
 }
 
+export const getBookingByEmployeeName = async (name) => {
+    const response = await fetch(`/api/bookings/name/${name}`);
+
+    const booking = await response.json();
+
+    return booking;
+}
+
 export const createBooking = async (newBooking) => {
     const response = await fetch(`/api/bookings`, {
         method: "POST",

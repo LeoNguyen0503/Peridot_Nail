@@ -17,7 +17,7 @@ function Auth() {
             const response = await verifyAdmin(login);
             if (response.success) {
                 sessionStorage.setItem("credential", "true");
-                navigate("/admin");
+                navigate("/booking-list");
             } else if (response.message === "Admin not found"){
                 alert("Admin not found, wrong username")
             } else {

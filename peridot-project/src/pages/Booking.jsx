@@ -30,12 +30,6 @@ function Booking(){
     },[])
 
 
-    // if (employees.length > 0) {
-    //     console.log(employees[0]._id);
-    //     console.log(typeof employees[0]._id);
-    // }
-
-
 
     return (
         <div className="booking-container">

@@ -18,7 +18,7 @@ export const verifyAdminByName = async (req, res) => {
     try {
         const admin = await Admin.findOne({login: login});
         if(!admin){
-            return res.status(404).json({ success: false, message: "Admin not found" });
+            return res.status(404).json({ success: false, message: "BookingList not found" });
         } else {
             const hash = admin.password;
             const isMatch = await argon2.verify(hash, password);
@@ -57,16 +57,16 @@ export const deleteAdmin = async (req, res) => {
     const {id} = req.params;
 
     if(!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({ success: false, message: "Invalid Admin ID" });
+        return res.status(404).json({ success: false, message: "Invalid BookingList ID" });
     }
 
 
     try {
         await Admin.findByIdAndDelete(id);
-        res.status(200).json({ success: true, message: "Admin deleted successfully" });
+        res.status(200).json({ success: true, message: "BookingList deleted successfully" });
     } catch (error) {
         console.error("Error in Delete admin", error.message);
-        res.status(404).json({ success: false, message: "Admin not found" });
+        res.status(404).json({ success: false, message: "BookingList not found" });
     }
 }
 
@@ -76,7 +76,7 @@ export const updateAdmin = async (req, res) => {
     const admin = req.body;
 
     if(!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({ success: false, message: "Invalid Admin ID" });
+        return res.status(404).json({ success: false, message: "Invalid BookingList ID" });
     }
 
     try {

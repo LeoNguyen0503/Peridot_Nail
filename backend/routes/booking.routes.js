@@ -5,7 +5,7 @@ import {
     deleteBooking,
     updateBooking,
     getBookingByEmployeeId,
-    getBookingByEmployeeIdAndDate
+    getBookingByEmployeeIdAndDate, getBookingByEmployeeName
 } from "../controllers/booking.controllers.js";
 
 const router = express.Router();
@@ -14,7 +14,9 @@ router.get("", getBooking);
 
 router.get("/:id", getBookingByEmployeeId);
 
-router.get("/:id/date", getBookingByEmployeeIdAndDate)
+router.get("/:id/date", getBookingByEmployeeIdAndDate);
+
+router.get("/name/:name", getBookingByEmployeeName)
 
 router.post("", createBooking);
 
