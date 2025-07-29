@@ -29,9 +29,9 @@ const Footer = forwardRef((props, ref) => {
                     </div>
                     <div className="business-hours">
                         <h3>BUSINESS HOURS</h3>
-                        <p>Mon - Sat: 9 a.m - 6 p.m</p>
-                        <p>Sunday: Closed</p>
-                    </div> 
+                        <p>Tue - Thur - Sat: 9 a.m - 6 p.m</p>
+                        <p>Mon - Wed - Fri - Sun: Closed</p>
+                    </div>
                 </div>
                 <hr />
                 <div>
