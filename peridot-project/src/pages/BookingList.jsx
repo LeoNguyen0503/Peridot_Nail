@@ -6,10 +6,10 @@ import { numToDay } from "../api/index.js";
 function BookingList() {
     const navigate = useNavigate();
     const [bookings, setBookings] = useState([]);
-    const [employee, setEmployee] = useState("all-booking");
-
+    // const [employee, setEmployee] = useState("all-booking");
+    const [employee, setEmployee] = sessionStorage.getItem("admin") ? useState("all-booking") : useState(sessionStorage.getItem("employeeName"));
     useEffect(() => {
-        const isLoggedIn = sessionStorage.getItem("credential");
+        const isLoggedIn = sessionStorage.getItem("credential") || sessionStorage.getItem("admin");
         if (!isLoggedIn) {
             navigate("/auth");
         }
@@ -57,14 +57,19 @@ function BookingList() {
         setEmployee(event.target.value);
     }
 
+    const handleLogout = () => {
+        sessionStorage.clear();
+        navigate("/auth");
+    }
+
     return  (
         <div className="fetch-booking">
             <h2>All Bookings</h2>
-            <select name="employee" id="employee" onChange={handleClick}>
+            {sessionStorage.getItem("admin") && (<select name="employee" id="employee" onChange={handleClick}>
                 <option value="all-booking">All Booking</option>
                 <option value="Jane">Jane</option>
                 <option value="Trieu">Trieu</option>
-            </select>
+            </select>)}
             <p>choose: {employee}</p>
             <div className="booking-list">
                 {bookings.map((booking, index) => (
@@ -80,6 +85,8 @@ function BookingList() {
                     </div>
                 ))}
             </div>
+            <br/>
+            <button onClick={handleLogout}>Log out</button>
         </div>
 
     )

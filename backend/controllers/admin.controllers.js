@@ -25,7 +25,13 @@ export const verifyAdminByName = async (req, res) => {
             if (!isMatch) {
                 return res.status(401).json({ success: false, message: "Invalid password " + req.body.password});
             }
-            res.status(200).json({ success: true, message: "admin login successfully" });
+            res.status(200).json({
+                success: true,
+                message: "admin login successfully",
+                data: {
+                    isAdmin: admin.isAdmin,
+                    name: admin.name
+            }});
         }
     } catch (error) {
         console.error("Error in Get admin by name", error.message);

@@ -57,7 +57,7 @@ export const getBookingByEmployeeName = async (req, res) => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    console.log(name);
+    // console.log(name);
 
     try {
         const booking = await Booking.find({
