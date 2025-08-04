@@ -1,19 +1,44 @@
-import { useEffect } from "react";
+import {useEffect, useState} from "react";
+import EmployeeCard from "../components/EmployeeCard.jsx";
+import pic1 from '../assets/logo.png';
+import { getEmployees } from "../api/employee.js";
 
 function Booking(){
 
+    const [employees, setEmployees] = useState([])
+
+
+    const fetchEmployee = async () => {
+
+        try {
+            const employee = await getEmployees();
+
+            if (employee.success) {
+                setEmployees(employee.data);
+            } else {
+                console.log("error: " + employee.message);
+            }
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+
     useEffect(() => {
-        document.title = "Peridot Nails - Booking";  
+       document.title = "Peridot Nails - Booking";
+       fetchEmployee()
     },[])
 
     return (
         <div className="booking-container">
-            {/* <img src="https://via.placeholder.com/300x200?text=Placeholder" alt="Placeholder" /> */}
-            <div className="content">
-                <p>Please call:</p>
-                <p>(506) 378-9279</p>
-                <p>to book an appointment</p>
-            </div>
+            <ul>
+                {employees.map((employee, index) => (
+                    <li key={index}>
+                        <EmployeeCard image={pic1}
+                                      employee={employee}/>
+                    </li>
+                ))}
+            </ul>
         </div>
     )
 }

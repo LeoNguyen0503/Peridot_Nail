@@ -7,7 +7,7 @@ function Services(){
     const location = useLocation();
 
     useEffect(() => {
-            document.title = "Peridot Nails - Services";  
+            document.title = "Peridot Nails - Services";
 
             const scrollToHash = () => {
                 const hash = window.location.hash;
