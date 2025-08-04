@@ -19,8 +19,6 @@ function Home(){
         document.title = "Peridot Nails - Home";
     },[])
 
-    console.log("Hello");
-
 
     return (
         <section className="home-container">
