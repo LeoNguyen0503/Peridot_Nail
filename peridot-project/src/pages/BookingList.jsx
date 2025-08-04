@@ -6,7 +6,7 @@ import { numToDay } from "../api/index.js";
 function BookingList() {
     const navigate = useNavigate();
     const [bookings, setBookings] = useState([]);
-    // const [employee, setEmployee] = useState("all-booking");
+    const [filteredBookings, setFilteredBookings] = useState([]);
     const [employee, setEmployee] = sessionStorage.getItem("admin") ? useState("all-booking") : useState(sessionStorage.getItem("employeeName"));
     useEffect(() => {
         const isLoggedIn = sessionStorage.getItem("credential") || sessionStorage.getItem("admin");
@@ -31,13 +31,14 @@ function BookingList() {
         return () => {
             isCancelled = true;
         };
-    }, [employee]);
+    }, []);
 
     async function fetchAllBookings(flag) {
         const booked = await getBooking();
 
         if (!flag && booked.success) {
             setBookings(booked.data);
+            setFilteredBookings(booked.data);
         } else {
             console.log("error: " + booked.message);
         }
@@ -47,14 +48,21 @@ function BookingList() {
         const booked = await getBookingByEmployeeName(name);
 
         if (!flag && booked.success) {
-            setBookings(booked.data);
+            setFilteredBookings(booked.data);
         } else {
             console.log("error: " + booked.message);
         }
     }
 
     const handleClick = (event) => {
-        setEmployee(event.target.value);
+        const value = event.target.value;
+        const newBookingData = bookings.filter((booking) => booking.employeeName === value);
+        if (newBookingData.length > 0) {
+            setFilteredBookings(newBookingData);
+        } else {
+            setFilteredBookings(bookings);
+        }
+        console.log("set new bookingData");
     }
 
     const handleLogout = () => {
@@ -72,7 +80,7 @@ function BookingList() {
             </select>)}
             <p>choose: {employee}</p>
             <div className="booking-list">
-                {bookings.map((booking, index) => (
+                {filteredBookings.map((booking, index) => (
                     <div className="booking-card" key={index}>
                         <h3>{booking.dateString} ({numToDay(new Date(booking.date).getDay())}) @ {booking.time} for {booking.employeeName}</h3>
                         <p><strong>Phone:</strong> {booking.phone}</p>

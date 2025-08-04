@@ -199,7 +199,7 @@ function BookingProcess(props) {
                 </fieldset>
 
                 <div className="form-buttons">
-                    <input className="submit-button" type="submit"/>
+                    <input className="submit-button" type="submit" value="Submit"/>
                     <input className="reset-button" type="reset" value="Cancel"/>
                 </div>
 
