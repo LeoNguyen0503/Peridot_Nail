@@ -9,6 +9,9 @@ function BookingProcess(props) {
 
     const [selectedDate, setSelectedDate] = useState(null);
     const [selectedTime, setSelectedTime] = useState(null);
+    const [showConfirmation, setShowConfirmation] = useState(false);
+    const [bookingDetails, setBookingDetails] = useState(null);
+
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -101,8 +104,8 @@ function BookingProcess(props) {
         try {
             const data = await createBooking(booking);
             if (data.success) {
-                alert ("Booked Successfully!");
-                navigate("/");
+                setBookingDetails(booking);
+                setShowConfirmation(true);
             }else {
                 alert("Booking Failed! " + data.message);
             }
@@ -121,6 +124,37 @@ function BookingProcess(props) {
     return (
         <div className="booking-form">
             <h1>Booking {name}</h1>
+            {showConfirmation && bookingDetails && (
+                <div className="confirmation-popup">
+                    <div className="popup-content">
+                        <h2>Booking Confirmed!</h2>
+                        <p><strong>Employee:</strong> {bookingDetails.employeeName}</p>
+                        <p><strong>Date:</strong> {bookingDetails.dateString} ({bookingDetails.date.toLocaleDateString('en-US', { weekday: 'short' })})</p>
+                        <p><strong>Time:</strong> {bookingDetails.time}</p>
+
+                        <div>
+                            <strong>Services:</strong>
+                            <ul>
+                                {Object.entries(bookingDetails.services).flatMap(([category, services]) =>
+                                    services.map((service, index) => (
+                                        <li key={`${category}-${index}`}>{service}</li>
+                                    ))
+                                )}
+                            </ul>
+                        </div>
+
+                        <button onClick={() => {
+                            // Reset state to make another appointment
+                            setSelectedDate(null);
+                            setSelectedTime(null);
+                            setShowConfirmation(false);
+                            navigate("/booking");
+                        }}>Make Another Appointment</button>
+
+                        <button onClick={() => navigate("/")}>Go to Home</button>
+                    </div>
+                </div>
+            )}
             <form onSubmit={handleSubmit}>
 
                 <fieldset>

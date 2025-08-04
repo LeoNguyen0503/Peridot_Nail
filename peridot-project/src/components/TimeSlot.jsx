@@ -66,9 +66,12 @@ function TimeSlot( { selectedDate, selectedTime, setSelectedTime, employeeId, av
                 }
             }
 
-            const availableSlot = fullTimeSlot.filter(time => !booked.includes(time));
-
-            setAvailTime(availableSlot);
+            if (fullTimeSlot) {
+                const availableSlot = fullTimeSlot.filter(time => !booked.includes(time));
+                setAvailTime(availableSlot);
+            } else {
+                setAvailTime([]);
+            }
         }
     },[selectedDate, timeSlot]);
 
@@ -77,21 +80,25 @@ function TimeSlot( { selectedDate, selectedTime, setSelectedTime, employeeId, av
 
     return(
         <div className="time-slot-container">
-            {availTime.length > 0 && (
-                <ul className="time-slot-list">
-                    {availTime.map((time, index) => (
-                        <li key={index}>
-                            <button
-                                type="button"
-                                className={`time-slot-button ${selectedTime === time ? "selected" : ""}`}
-                                onClick={() => setSelectedTime(time)}
-                            >
-                                {time}
-                            </button>
-                        </li>
-                    ))}
-                </ul>
-            )}
+            {selectedDate ? (
+                availTime.length > 0 ? (
+                    <ul className="time-slot-list">
+                        {availTime.map((time, index) => (
+                            <li key={index}>
+                                <button
+                                    type="button"
+                                    className={`time-slot-button ${selectedTime === time ? "selected" : ""}`}
+                                    onClick={() => setSelectedTime(time)}
+                                >
+                                    {time}
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p style={{ color: "red" }}>There is no available time slot</p>
+                )
+            ) : null}
         </div>
         
     )
