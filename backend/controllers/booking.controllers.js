@@ -1,5 +1,6 @@
 import Booking from '../models/booking.model.js';
 import mongoose from 'mongoose';
+import { broadcastToAdmins} from "../websocket.js";
 
 export const getBooking = async (_, res) => {
     const today = new Date();
@@ -87,6 +88,10 @@ export const createBooking = async (req, res) => {
 
     try {
        await newBooking.save();
+       broadcastToAdmins({
+           type: 'NEW_BOOKING',
+           payload: newBooking
+       });
        res.status(201).json({ success: true, data: newBooking });
     } catch (e) {
         console.error("Error in Create booking", e.message);

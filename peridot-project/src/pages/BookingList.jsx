@@ -28,10 +28,32 @@ function BookingList() {
 
         loadBookings();
 
+        const ws = new WebSocket("ws://localhost:5000");
+
+        ws.onopen = () => {console.log("WebSocket Open");};
+
+        ws.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+
+            if (data.type === "NEW_BOOKING") {
+                if (sessionStorage.getItem("admin")) {
+                    setBookings(prev => [data.payload, ...prev]);
+                    setFilteredBookings(prev => [data.payload, ...prev]);
+                } else {
+                    const name = sessionStorage.getItem("employeeName");
+                    if (name === data.payload.employeeName){
+                        setFilteredBookings(prev => [data.payload, ...prev]);
+                    }
+                }
+            }
+        }
+
         return () => {
             isCancelled = true;
+            ws.close();
         };
     }, []);
+
 
     async function fetchAllBookings(flag) {
         const booked = await getBooking();
