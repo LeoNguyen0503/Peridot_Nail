@@ -511,6 +511,13 @@ footer hr{
     margin: 0 auto;       /* center the UL itself */
 }
 
+.booking-container ul li {
+    flex: 0 0 auto;  /* do not shrink below content width */
+    /* optional: display:flex to let the card fill the LI */
+    display: flex;
+}
+
+
 
 
 .employee-card{
@@ -523,6 +530,7 @@ footer hr{
     width: min(420px, 100%); /* keep responsive width */
     display: flex;
     gap: 30px;
+    box-sizing: border-box;
 }
 
 
@@ -1012,15 +1020,13 @@ input[type="checkbox"] {
     .booking-container ul {
         max-width: 350px;
         width: 100%;
-        margin: 0 auto; /* center horizontally */
     }
 
     .booking-container ul li {
-        width: 100% !important; /* make each li take full ul width */
+        width: 100%
     }
 
     .employee-card{
-        max-width: 350px;
         width: 100%
     }
 
