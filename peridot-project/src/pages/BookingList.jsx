@@ -8,7 +8,7 @@ function BookingList() {
     const [bookings, setBookings] = useState([]);
     const [filteredBookings, setFilteredBookings] = useState([]);
     const [employee, setEmployee] = sessionStorage.getItem("admin") ? useState("all-booking") : useState(sessionStorage.getItem("employeeName"));
-    const WS_URL = import.meta.env.WS_URL;
+    const WS_URL = import.meta.env.VITE_WS_URL;
     useEffect(() => {
         const isLoggedIn = sessionStorage.getItem("credential") || sessionStorage.getItem("admin");
         if (!isLoggedIn) {

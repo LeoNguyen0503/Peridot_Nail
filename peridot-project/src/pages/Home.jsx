@@ -65,9 +65,9 @@ function Home(){
                 </div>
             )}
             <div className="image-container">
-                <Link to="/booking">
-                    <button>Booking Appointment</button>
-                </Link>
+                {/*<Link to="/booking">*/}
+                {/*    <button>Booking Appointment</button>*/}
+                {/*</Link>*/}
                 <Link to="/services">
                     <button>Services</button>
                 </Link>
