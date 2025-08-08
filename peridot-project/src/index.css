@@ -1007,12 +1007,10 @@ input[type="checkbox"] {
         max-width: 350px;
         width: 100%;
         margin: 0 auto; /* center horizontally */
-        background-color: lightblue; /* for testing */
     }
 
     .booking-container ul li {
         width: 100% !important; /* make each li take full ul width */
-        background-color: yellow;
     }
 
     .employee-card{
