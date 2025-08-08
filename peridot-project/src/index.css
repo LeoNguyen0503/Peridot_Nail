@@ -505,6 +505,7 @@ footer hr{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    width: 420px;
 
     /* add these to truly center the list on all screens */
     padding: 0;           /* remove default UL padding */
@@ -515,6 +516,7 @@ footer hr{
     flex: 0 0 auto;  /* do not shrink below content width */
     /* optional: display:flex to let the card fill the LI */
     display: flex;
+    width: 100%
 }
 
 
