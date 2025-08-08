@@ -55,8 +55,8 @@ function Header() {
                             contactUsToggle();
                         }
                     }>Contact Us</Link></li>
-                    <li><Link to="/booking" onClick={() => setIsOpen(false)}>Online Booking</Link></li>
-                    {/*{isLoggedIn && (<li><Link to="/booking-list" onClick={() => setIsOpen(false)}>Booking List</Link></li>)}*/}
+                    {/*<li><Link to="/booking" onClick={() => setIsOpen(false)}>Online Booking</Link></li>*/}
+                    {isLoggedIn && (<li><Link to="/booking-list" onClick={() => setIsOpen(false)}>Booking List</Link></li>)}
                 </ul>
             </nav>
         </header>
