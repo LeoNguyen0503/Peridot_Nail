@@ -14,7 +14,7 @@ const app = express();
 
 app.use(express.json()); //allow to accept JSON data in requests
 
-const allowedOrigins ="https://www.peridotnailsmoncton.ca/";
+const allowedOrigins ="https://www.peridotnailsmoncton.ca";
 
 app.use(cors({
     origin: allowedOrigins,
