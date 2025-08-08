@@ -14,6 +14,13 @@ const app = express();
 
 app.use(express.json()); //allow to accept JSON data in requests
 
+const allowedOrigins = ["http://localhost:5173", "https://www.peridotnailsmoncton.ca/"];
+
+app.use(cors({
+    origin: allowedOrigins,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
+}));
+
 app.use("/api/employees", employeeRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/admin", adminRoutes);
@@ -21,12 +28,7 @@ app.use("/api/admin", adminRoutes);
 const server = http.createServer(app);
 setupWebSocket(server);
 
-const allowedOrigins = ["http://localhost:5173", "https://www.peridotnailsmoncton.ca/"];
 
-app.use(cors({
-    origin: allowedOrigins,
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
-}));
 
 
 const PORT = process.env.PORT || 5000;

@@ -1,6 +1,7 @@
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const getEmployees = async () => {
-    const response = await fetch("/api/employees");
+    const response = await fetch(`${API_URL}/api/employees`);
 
     const employee = await response.json();
 
@@ -8,7 +9,7 @@ export const getEmployees = async () => {
 }
 
 export const getEmployeeById = async (id) => {
-    const response = await fetch(`/api/employees/${id}`);
+    const response = await fetch(`${API_URL}/api/employees/${id}`);
 
     const employee = await response.json();
 

@@ -8,6 +8,7 @@ function BookingList() {
     const [bookings, setBookings] = useState([]);
     const [filteredBookings, setFilteredBookings] = useState([]);
     const [employee, setEmployee] = sessionStorage.getItem("admin") ? useState("all-booking") : useState(sessionStorage.getItem("employeeName"));
+    const WS_URL = import.meta.env.WS_URL;
     useEffect(() => {
         const isLoggedIn = sessionStorage.getItem("credential") || sessionStorage.getItem("admin");
         if (!isLoggedIn) {
@@ -28,7 +29,7 @@ function BookingList() {
 
         loadBookings();
 
-        const ws = new WebSocket("ws://localhost:5000");
+        const ws = new WebSocket(WS_URL);
 
         ws.onopen = () => {console.log("WebSocket Open");};
 

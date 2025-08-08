@@ -1,6 +1,6 @@
-
+const API_URL = import.meta.env.VITE_API_URL;
 export const getBooking = async () => {
-    const response = await fetch("/api/bookings");
+    const response = await fetch(`${API_URL}/api/bookings`);
 
     const booking = await response.json();
 
@@ -8,7 +8,7 @@ export const getBooking = async () => {
 }
 
 export const getBookingByEmployeeId = async (eId) => {
-    const response = await fetch(`/api/bookings/${eId}`);
+    const response = await fetch(`${API_URL}/api/bookings/${eId}`);
 
     const booking = await response.json();
 
@@ -16,7 +16,7 @@ export const getBookingByEmployeeId = async (eId) => {
 }
 
 export const getBookingByEmployeeIdAndDate = async (eId, dateString) => {
-    const response = await fetch(`/api/bookings/${eId}/date?date=${dateString}`);
+    const response = await fetch(`${API_URL}/api/bookings/${eId}/date?date=${dateString}`);
 
     const booking = await response.json();
 
@@ -24,7 +24,7 @@ export const getBookingByEmployeeIdAndDate = async (eId, dateString) => {
 }
 
 export const getBookingByEmployeeName = async (name) => {
-    const response = await fetch(`/api/bookings/name/${name}`);
+    const response = await fetch(`${API_URL}/api/bookings/name/${name}`);
 
     const booking = await response.json();
 
@@ -32,7 +32,7 @@ export const getBookingByEmployeeName = async (name) => {
 }
 
 export const createBooking = async (newBooking) => {
-    const response = await fetch(`/api/bookings`, {
+    const response = await fetch(`${API_URL}/api/bookings`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
