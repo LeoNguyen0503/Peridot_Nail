@@ -98,23 +98,41 @@ function BookingList() {
             <h2>All Bookings</h2>
             {sessionStorage.getItem("admin") && (<select name="employee" id="employee" onChange={handleClick}>
                 <option value="all-booking">All Booking</option>
-                <option value="Jane">Jane</option>
+                {/*<option value="Jane">Jane</option>*/}
                 <option value="Trieu">Trieu</option>
             </select>)}
             <p>choose: {employee}</p>
             <div className="booking-list">
-                {filteredBookings.map((booking, index) => (
-                    <div className="booking-card" key={index}>
-                        <h3>{booking.dateString} ({numToDay(new Date(booking.date).getDay())}) @ {booking.time} for {booking.employeeName}</h3>
-                        <p><strong>Phone:</strong> {booking.phone}</p>
-                        <p><strong>Manicure:</strong> {booking.services.manicure.length > 0 ? booking.services.manicure.join(", ") : "N/A"}</p>
-                        <p><strong>Pedicure:</strong> {booking.services.pedicure.length > 0 ? booking.services.pedicure.join(", ") : "N/A"}</p>
-                        <p><strong>Combo:</strong> {booking.services.combo.length > 0 ? booking.services.combo.join(", ") : "N/A"}</p>
-                        <p><strong>Nails Enhancement:</strong> {booking.services.nailsEnhancement.length > 0 ? booking.services.nailsEnhancement.join(", ") : "N/A"}</p>
-                        <p><strong>Add On:</strong> {booking.services.addOn.length > 0 ? booking.services.addOn.join(", ") : "N/A"}</p>
-                        <p><strong>Kids:</strong> {booking.services.kids.length > 0 ? booking.services.kids.join(", ") : "N/A"}</p>
-                    </div>
-                ))}
+                {filteredBookings.length > 0 ? (
+                    filteredBookings.map((booking, index) => (
+                        <div className="booking-card" key={index}>
+                            <h3>
+                                {booking.dateString} ({numToDay(new Date(booking.date).getDay())}) @ {booking.time} for {booking.employeeName}
+                            </h3>
+                            <p><strong>Phone:</strong> {booking.phone}</p>
+                            <p>
+                                <strong>Manicure:</strong> {booking.services.manicure.length > 0 ? booking.services.manicure.join(", ") : "N/A"}
+                            </p>
+                            <p>
+                                <strong>Pedicure:</strong> {booking.services.pedicure.length > 0 ? booking.services.pedicure.join(", ") : "N/A"}
+                            </p>
+                            <p>
+                                <strong>Combo:</strong> {booking.services.combo.length > 0 ? booking.services.combo.join(", ") : "N/A"}
+                            </p>
+                            <p>
+                                <strong>Nails Enhancement:</strong> {booking.services.nailsEnhancement.length > 0 ? booking.services.nailsEnhancement.join(", ") : "N/A"}
+                            </p>
+                            <p>
+                                <strong>Add On:</strong> {booking.services.addOn.length > 0 ? booking.services.addOn.join(", ") : "N/A"}
+                            </p>
+                            <p>
+                                <strong>Kids:</strong> {booking.services.kids.length > 0 ? booking.services.kids.join(", ") : "N/A"}
+                            </p>
+                        </div>
+                    ))
+                ) : (
+                    <p style={{ color: "red" }}>There is no booking.</p>
+                )}
             </div>
             <br/>
             <button onClick={handleLogout}>Log out</button>

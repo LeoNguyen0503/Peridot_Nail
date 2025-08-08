@@ -1003,6 +1003,23 @@ input[type="checkbox"] {
         font-size: 0.96rem;
     }
 
+    .booking-container ul {
+        max-width: 350px;
+        width: 100%;
+        margin: 0 auto; /* center horizontally */
+        background-color: lightblue; /* for testing */
+    }
+
+    .booking-container ul li {
+        width: 100% !important; /* make each li take full ul width */
+        background-color: yellow;
+    }
+
+    .employee-card{
+        max-width: 350px;
+        width: 100%
+    }
+
     
 }
 
