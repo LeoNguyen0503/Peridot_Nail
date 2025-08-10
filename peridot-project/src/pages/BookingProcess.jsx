@@ -214,6 +214,7 @@ function BookingProcess(props) {
                             disable: [disableWeekDays(dateNumberArray)],
                             dateFormat: "Y-m-d",
                             minDate: "today",
+                            disableMobile:true,
                         }}
                         onChange = {(date) => setSelectedDate(date[0])}
                     />
