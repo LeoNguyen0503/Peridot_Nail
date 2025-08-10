@@ -14,7 +14,7 @@ const Footer = forwardRef((props, ref) => {
                         <h3>QUICK LINKS</h3>
                         <ul>
                             <li><Link to="/services">Services</Link></li>
-                            <li><Link to = "/booking">Online Booking</Link></li>
+                            {/*<li><Link to = "/booking">Online Booking</Link></li>*/}
                         </ul>
                         <ul className="social-media">
                             <li><a href="https://www.facebook.com/people/Peridot-Nail/61577093921464/" target="_blank" rel="noopener noreferrer"><FaFacebook/></a></li>
