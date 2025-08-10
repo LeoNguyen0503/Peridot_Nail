@@ -14,10 +14,16 @@ const app = express();
 
 app.use(express.json()); //allow to accept JSON data in requests
 
-const allowedOrigins ="https://www.peridotnailsmoncton.ca";
+const allowedOrigins = ["https://www.peridotnailsmoncton.ca","http://localhost:5173"];
 
 app.use(cors({
-    origin: allowedOrigins,
+    origin: (origin, callback) =>{
+        if(allowedOrigins.includes(origin) || !origin){
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
 }));
 

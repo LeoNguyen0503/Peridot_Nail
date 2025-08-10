@@ -27,9 +27,9 @@ function Home(){
 
         // Show promotion only if not closed in this session
         const promotionClosed = sessionStorage.getItem('promotionClosed');
-        if (!promotionClosed) {
-            setShowPromotion(true);
-        }
+        // if (!promotionClosed) {
+        //     setShowPromotion(true);
+        // }
         
     },[])
 
@@ -65,9 +65,9 @@ function Home(){
                 </div>
             )}
             <div className="image-container">
-                <Link to="/booking">
-                    <button>Booking Appointment</button>
-                </Link>
+                {/*<Link to="/booking">*/}
+                {/*    <button>Booking Appointment</button>*/}
+                {/*</Link>*/}
                 <Link to="/services">
                     <button>Services</button>
                 </Link>
