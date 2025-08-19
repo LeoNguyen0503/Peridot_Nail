@@ -71,6 +71,7 @@ function BookingProcess(props) {
         }
 
         const phone = document.querySelector("input[name=phone]").value;
+        const customerName = document.querySelector("input[name=fullname]").value;
 
         console.log("services: ", checkedServices);
 
@@ -87,13 +88,14 @@ function BookingProcess(props) {
         const regex = /^\d{3}-\d{3}-\d{4}$/
 
         if (!regex.test(phone)){
-            alert("Please enter a valid phone number");
+            alert("Please enter a valid phone number with the format XXX-XXX-XXXX");
             return;
         }
 
         const booking = {
             employeeId: employeeId,
             employeeName: name.charAt(0).toUpperCase() + name.slice(1).toLowerCase(),
+            customerName: customerName,
             date: selectedDate,
             dateString: selectedDate.toLocaleDateString(),
             time: selectedTime,
@@ -231,6 +233,11 @@ function BookingProcess(props) {
                 <fieldset>
                     <legend>Enter your phone number:</legend>
                     <label><input type="text" name="phone" placeholder="Eg: 123-456-7890"/></label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Enter your fullname:</legend>
+                    <label><input type="text" name="fullname" placeholder="Eg: John Doe"/></label>
                 </fieldset>
 
                 <div className="form-buttons">

@@ -109,6 +109,7 @@ function BookingList() {
                             <h3>
                                 {booking.dateString} ({numToDay(new Date(booking.date).getDay())}) @ {booking.time} for {booking.employeeName}
                             </h3>
+                            <p><strong>Customer name:</strong> {booking.customerName}</p>
                             <p><strong>Phone:</strong> {booking.phone}</p>
                             <p>
                                 <strong>Manicure:</strong> {booking.services.manicure.length > 0 ? booking.services.manicure.join(", ") : "N/A"}
