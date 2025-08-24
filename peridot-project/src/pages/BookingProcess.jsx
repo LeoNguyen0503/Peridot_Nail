@@ -118,11 +118,6 @@ function BookingProcess(props) {
 
     }
 
-    const handleButtonClick = (time) => {
-        setSelectedTime(time);
-
-    }
-
     return (
         <div className="booking-form">
             <h1>Booking {name}</h1>

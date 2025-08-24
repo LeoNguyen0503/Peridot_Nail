@@ -36,6 +36,19 @@ import pic35 from "../assets/nails/520629053_1945806369488656_442087286549492663
 import pic36 from "../assets/nails/520629053_3290318081118173_8665557733899724220_n.jpg";
 import pic37 from "../assets/nails/520979196_1274423897613686_370259972468907062_n.jpg";
 import pic38 from "../assets/nails/521399185_1032686342036667_3271426283377329691_n.jpg";
+import pic39 from "../assets/nails/524766835_1483853369453010_8953941955274400799_n.jpg";
+import pic40 from "../assets/nails/525422074_1279851277127973_4988337289618327291_n.jpg";
+import pic41 from "../assets/nails/527025403_1270871058158911_5593688862286362426_n.jpg";
+import pic42 from "../assets/nails/527236383_1052720107039147_3379923155353940951_n.jpg";
+import pic43 from "../assets/nails/528241227_759867136443409_8364611029637745819_n.jpg";
+import pic44 from "../assets/nails/528388727_1383938859343124_4145858178164931015_n.jpg";
+import pic45 from "../assets/nails/528911269_1332722351617046_5482566640594889650_n.jpg";
+import pic46 from "../assets/nails/531603990_1232353902024265_1671481808405792451_n.jpg";
+import pic47 from "../assets/nails/532029215_771921195473879_2582195211428696068_n.jpg";
+import pic48 from "../assets/nails/532424686_2657906224405444_4657234000027012271_n.jpg";
+import pic49 from "../assets/nails/532545588_786102037430781_207231682358363229_n.jpg";
+import pic50 from "../assets/nails/533541344_1446121486592833_5313050720306192128_n.jpg";
+
 
 import {useState} from "react";
 import { FiX } from "react-icons/fi";
@@ -49,7 +62,8 @@ function Images(){
     const images = [pic3, pic4, pic5, pic6, pic7, pic8, pic9,
         pic10, pic11, pic12, pic13, pic14, pic15, pic16, pic17, pic18,
         pic19, pic20, pic21, pic22, pic23, pic24, pic25, pic26, pic27,
-    pic28, pic29, pic30, pic31, pic32, pic33, pic34, pic35, pic36, pic37, pic38];
+    pic28, pic29, pic30, pic31, pic32, pic33, pic34, pic35, pic36, pic37, pic38,
+    pic39, pic40, pic41, pic42, pic43, pic44, pic45, pic46, pic47, pic48, pic49, pic50];
 
 
     const handleClick = (image) => {
