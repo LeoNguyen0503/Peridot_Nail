@@ -5,6 +5,7 @@ import {useState} from "react";
 import TimeSlot from "../components/TimeSlot.jsx";
 import {createBooking} from "../api/booking.js"
 
+
 function BookingProcess(props) {
 
     const [selectedDate, setSelectedDate] = useState(null);
