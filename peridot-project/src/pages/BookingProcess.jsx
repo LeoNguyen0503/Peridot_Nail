@@ -18,7 +18,6 @@ function BookingProcess(props) {
     const location = useLocation();
     const { name, availability, availObject, employeeId } = location.state || {};
 
-
     const unavailable = (date) => {
         const dateInWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
@@ -214,7 +213,7 @@ function BookingProcess(props) {
                             minDate: "today",
                             disableMobile:true,
                         }}
-                        onChange = {(date) => setSelectedDate(date[0])}
+                        onChange =   {(date) => setSelectedDate(date[0])}
                     />
                 </label>
 
